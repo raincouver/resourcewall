@@ -42,3 +42,27 @@ The following steps are only for _one_ of the group members to perform.
 - Node 10.x or above
 - NPM 5.x or above
 - PG 6.x
+
+### User End Stories
+* "As a logged in user, I can save a url with a title, description, and assign a category (one only)"
+* "As a logged in user, I can update a saved url (url, title, desc, category)"
+* "As a logged in user, I can delete a saved url I own"
+* "As a logged in user, I cannot delete a url I do not own" 
+* "As a logged in user, I can search for a saved resource created by any other user"
+* "As a logged in user, I can comment on any saved resource, including my own after creation" 
+* "As a logged in user, I can delete my comments" 
+* "As a logged in user, I cannot delete other users' comments"
+* "As a logged in user, I can rate any resource 1-5"
+* "As a logged in user, I can update my rating" 
+* "As a logged in user, I can see an average rating on each resource"
+
+* "As a non-logged in user, I can sign-in to my account"
+* "As a non-logged in user, I can register a new account" 
+* "As a non-logged in user, I have no access to the resources" 
+  * "As a non-logged in user, I cannot search any resources" 
+  * "As a non-logged in user, I cannot update any resources" 
+  * "As a non-logged in user, I cannot delete any resources" 
+  * "As a non-logged in user, I cannot like any resource" 
+  * "As a non-logged in user, I cannot comment on any resource"
+  * "As a non-logged in user, I cannot rate any resource"  
+
