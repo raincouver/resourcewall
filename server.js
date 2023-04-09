@@ -41,8 +41,8 @@ const usersRoutes = require('./routes/users');
 app.use('/resource', resourceRoutes);
 app.use('/category', categoryRoutes);
 app.use('/addnew', addNewRoutes);
-app.use('/signup', userSingupRoutes);
 app.use('/login', userLoginRoutes);
+app.use('/signup', userSingupRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
   // if user not logged in redirect to sign up / log in pages
 
   //if user logged in direct to user home page
-  res.render('index');
+  res.render('login');
 });
 
 app.listen(PORT, () => {
