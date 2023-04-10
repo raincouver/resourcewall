@@ -28,24 +28,33 @@ app.use(express.static('public'));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
-const userApiRoutes = require('./routes/users-api');
-const widgetApiRoutes = require('./routes/widgets-api');
+const userSignupRoutes = require('./routes/signup');
+const userLoginRoutes = require('./routes/login');
+const addNewRoutes = require('./routes/addNew');
+const categoryRoutes = require('./routes/category');
+const resourceRoutes = require('./routes/resource');
 const usersRoutes = require('./routes/users');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
-app.use('/api/users', userApiRoutes);
-app.use('/api/widgets', widgetApiRoutes);
+app.use('/resource', resourceRoutes);
+app.use('/category', categoryRoutes);
+app.use('/addnew', addNewRoutes);
+app.use('/login', userLoginRoutes);
+app.use('/signup', userSignupRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
-
 app.get('/', (req, res) => {
-  res.render('index');
+
+  // if user not logged in redirect to sign up / log in pages
+
+  //if user logged in direct to user home page
+  res.render('login');
 });
 
 app.listen(PORT, () => {
