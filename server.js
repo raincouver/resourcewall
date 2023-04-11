@@ -49,7 +49,7 @@ app.use('/login', userLoginRoutes);
 app.use('/signup', userSignupRoutes);
 app.use('/users', usersRoutes);
 app.use('/users-api', usersApiRoutes);
-app.use('/search', searchRoutes); 
+app.use('/search', searchRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
