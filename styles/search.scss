@@ -1,0 +1,17 @@
+.search-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  
+  #search-input {
+    border-radius: 5px;
+  }
+
+  button .border {
+    border-radius: 5px;
+  }
+
+  .results-body {
+    justify-content: flex-start;
+  }
+}
