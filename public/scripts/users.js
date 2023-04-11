@@ -25,13 +25,12 @@
 
 // Client facing scripts here
 $(() => {
-  $('body').load(() => {
-    $.ajax({
-      method: 'GET',
-      url: '/users-api/user-myurls'
-    })
-    .done((response) => {
-  .then(data => { data.array.forEach(element => {
+  fetch('/users-api/user-myurls')
+  .then(res => {return res.json()}) // parse the response as JSON
+  .then(data => { 
+    
+    console.log(data);
+    data.array.forEach(element => {
     console.log(element.my_urls_titles);
     const tableRow = `    
    <tr>
@@ -165,19 +164,3 @@ $(() => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Fetch resources
-$(document).ready(() => {
-  const $resultsContainer = $("#results-container");
-
-  
-})
