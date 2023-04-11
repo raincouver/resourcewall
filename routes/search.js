@@ -1,15 +1,13 @@
 const express = require('express');
 const router  = express.Router();
-const { searchAllResources } = require('../db/database');
+const { searchAllResources } = require('../db/queries/searchAllResources');
 
 router.get('/', (req, res) => {
   res.render('search');
 });
 
-router.post('/', (req, res) => {
-  const searchTerm = req.body.searchTerm;
-
-  console.log('Search term:', searchTerm) // debugging 
+router.get('/term/:term', (req, res) => {
+  const searchTerm = req.params.term;
   
   searchAllResources(`%${searchTerm}%`)
     .then((results) => {

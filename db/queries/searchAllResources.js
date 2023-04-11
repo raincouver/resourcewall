@@ -15,7 +15,7 @@ const searchAllResources = (searchInput) => {
       OR resources.url ILIKE $1
       OR users.name ILIKE $1
       OR categories.name ILIKE $1
-      GROUP BY resources.title
+      GROUP BY resources.title, resources.id
       ORDER BY resources.id;`, [searchInput]
     )
     .then((result) => {
