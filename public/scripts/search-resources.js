@@ -15,6 +15,9 @@ $(() => {
   }
 
   const renderSearch = (items) => {
+    // empty child nodes before rending results
+    $("#results-container").empty();
+    
     for (let item of items) {
       $("#results-container").append(createSearchItemElement(item))
     }
