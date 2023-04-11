@@ -12,7 +12,7 @@ VALUES
     'Valkyrie', 
     'northstar@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar1.PNG'
+    '/images/trimmed/avatar1.PNG'
   );
 
 INSERT INTO users 
