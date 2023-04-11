@@ -7,6 +7,7 @@ const searchAllResources = (searchInput) => {
     .query(
       `SELECT resources.title, 
       resources.url, 
+      categories.name as category,  
       ROUND(AVG(ratings.rating), 1) as average_rating
       FROM resources
       JOIN ratings ON resources.id = resource_id
@@ -16,7 +17,7 @@ const searchAllResources = (searchInput) => {
       OR resources.url ILIKE $1
       OR users.name ILIKE $1
       OR categories.name ILIKE $1
-      GROUP BY resources.title, resources.id
+      GROUP BY resources.title, resources.id, categories.name
       ORDER BY resources.id;`, [searchInput]
     )
     .then((result) => {

@@ -2,9 +2,14 @@ $(() => {
 
   const createSearchItemElement = (item) => {
     return `
-     <div>${item.title}</div>
-     <div>${item.average_rating}</div>
-     <div>--------</div>
+    <article class="search-results">
+      <div class="results-body">
+        <div>Title: ${item.title}</div>
+        <div>URL: ${item.url}</div>
+        <div>Category: ${item.category}</div>
+        <div>Rating: ${item.average_rating}</div>
+      </div>  
+    </article>
     `
   }
 
