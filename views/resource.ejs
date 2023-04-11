@@ -5,48 +5,88 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <title>URL - Short URL:<%= id %>
+  <link rel="stylesheet" href="/styles/resource.css">
+  <title>Resource Page
   </title>
 </head>
 
 <header>
-  <%- include('partials/_header') %>
+  <%- include('./partials/_header') %>
 </header>
 
 <body>
-  <div class="card text-center">
-    <div class="card-header"></div>
-    <div class="card-body">
-      <h5 class="card-title">TinyURL for: <a href="<%= longURL %>">
-          <%= longURL %>
-        </a></h5>
-      <p class="card-text">
-        Short URL ID: <a href="/u/<%= id %>">
-          <%= id %>
-        </a>
-      </p>
+  <section class="resource-container">
+
+    <div class="content-container">
+      <H1>Resource Title</H1>
+      <div class="resource-list">
+        <ul>
+          <li><a href="https://www.google.com">www.exampleURL.com</a></li>
+        </ul>
+      </div>
+
+      <div class="content-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
+          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
+          ducimus reprehenderit aut officiis.
+          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
+          temporibus quisquam. Dolores cupiditate excepturi et veritatis totam quis maiores illo, in, quidem cumque
+          modi, porro eligendi</p>
+      </div>
+
+      <div class="tags-container">
+        <button class="btn btn-warning">Category</button>
+        <button class="btn btn-warning">Like</button>
+        <button class="btn btn-warning">Rating</button>
+      </div>
     </div>
-    <div class="card-footer text-muted">
-      <h3 class="text-center">Edit</h3>
-      <form class="text-center" action="/urls/<%= id %>" method="POST">
-        <label for="longURL">Enter a new URL:</label>
-        <input class="center-block" type="text" name="longURL" placeholder="http://" value="http://"
-          style="width: 300px; margin: 1em" />
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+    <div class="comments-container">
+      <form id="comment-form" action="">
+        <div>
+          <textarea id="comment-text" placeholder="Add a comment" name="comment-text" id="" cols="30"
+            rows="10"></textarea>
+        </div>
+        <div class="button-contaiiner">
+          <button type="submit" class="btn btn-primary">Post Comment</button>
+        </div>
+      </form>
+      <h3>Comments</h3>
+      <article class="new-comment">
+        <p>
+          Just default test text!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
+          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
+          ducimus reprehenderit aut officiis.
+          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
+        <p>
+      </article>
+
+      <article class="new-comment">
+        <p>
+          Just default test text!
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
+          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
+          ducimus reprehenderit aut officiis.
+          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
+        <p>
+      </article>
+
     </div>
 
+  </section>
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
