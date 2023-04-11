@@ -1,3 +1,4 @@
+
 const db = require('../connection');
 
 const getUsers = () => {
@@ -6,5 +7,7 @@ const getUsers = () => {
       return data.rows;
     });
 };
+
+
 
 module.exports = { getUsers };

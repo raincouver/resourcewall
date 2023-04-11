@@ -1,4 +1,4 @@
-// Client facing scripts here
+// Fetch users example
 $(() => {
   $('#fetch-users').on('click', () => {
     $.ajax({
@@ -15,3 +15,11 @@ $(() => {
     });
   });
 });
+
+
+// Fetch resources
+$(document).ready(() => {
+  const $resultsContainer = $("#results-container");
+
+  
+})
