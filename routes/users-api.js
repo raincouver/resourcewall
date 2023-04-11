@@ -9,16 +9,51 @@ const express = require('express');
 const router  = express.Router();
 const userQueries = require('../db/queries/users');
 
-router.get('/', (req, res) => {
-  userQueries.getUsers()
-    .then(users => {
-      res.json({ users });
-    })
-    .catch(err => {
-      res
-        .status(500)
-        .json({ error: err.message });
-    });
+
+router.use((req, res, next) => {
+  console.log(req.url, '@usersAPI@', Date(Date.now()));
+  next();
+})
+
+router.get('/userinfo', (req, res) => {
+
+  userQueries.getUserInfo()
+  .then(data => {
+    res.json({data});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+
 });
 
+router.get('/user-myurls', (req, res) => {
+
+  userQueries.getUserMyUrls()
+  .then(data => {
+    res.json({data});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+
+});
+
+router.get('/user-likedurls', (req, res) => {
+
+  userQueries.getUserLikedUrls()
+  .then(data => {
+    res.json({data});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+
+});
 module.exports = router;
