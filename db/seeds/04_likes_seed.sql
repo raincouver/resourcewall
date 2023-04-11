@@ -85,3 +85,15 @@ VALUES
     8,
     8
   );
+
+  --Reflecting likes
+  INSERT INTO likes 
+  (
+    user_id,
+    resource_id
+  ) 
+VALUES 
+  (
+    1,
+    8
+  );
