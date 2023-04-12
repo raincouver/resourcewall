@@ -1,39 +1,30 @@
 const db = require('../connection');
 
-const changePassword = (id) => {
-  const querychangePassword  = `
-                                Update users
-                                SET password = hash(newPassword)
-                                WHERE id = ${id};
-                                `;
-};
+// const changePassword = (id) => {
+//   const querychangePassword  = `
+//                                 Update users
+//                                 SET password = hash(newPassword)
+//                                 WHERE id = ${id};
+//                                 `;
+// };
 
 const deleteResource = (id) => {
-  const querydeleteResource  = `
-                                UPDATE resources 
-                                SET user_id = null
-                                WHERE id = ${id};
-                                `;
 
-  return db.query(querydeleteResource)
-    // .then(data => {
-    //   console.log(data.rows);
-    //   return data.rows;
-    // });
+  return db.query(`
+                  UPDATE resources 
+                  SET user_id = null 
+                  WHERE id = $1`, [id])
+
 };
 
 const dislikeResource = (id) => {
 
-  const querydislikeResource  = `
-                                DELETE FROM likes 
-                                WHERE id = ${id};
-                                `;
+  return db.query(`
+                  DELETE FROM likes
+                  WHERE id = $1;`, [id])
 
-  return db.query(querydislikeResource)
-    // .then(data => {
-    //   console.log(data.rows);
-    //   return data.rows;
-    // });
 };
 
-module.exports = { changePassword, deleteResource, dislikeResource };
+module.exports = { 
+  // changePassword, 
+  deleteResource, dislikeResource };
