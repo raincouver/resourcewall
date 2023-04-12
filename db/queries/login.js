@@ -13,5 +13,15 @@ const getUserByEmail = (email) => {
     });
 };
 
+const registerNewUser = (data) => {
 
-module.exports = { getUserByEmail };
+    return db.query(`
+              INSERT INTO users (name, email, password, profile_picture_path)
+              VALUES ($1, $2, $3, $4);`, [data.name, data.email, data.password, data.avatar])
+    .then(
+      console.log(`registered ${data.name} successfully`)
+    );
+  
+};
+
+module.exports = { getUserByEmail, registerNewUser };

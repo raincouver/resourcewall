@@ -30,14 +30,22 @@
   <main style="margin: 1em;">
     <h3>Join ResourceWall</h3>
 
-    <form class="form-inline" action="/register" method="POST">
+    <form class="form-inline" action="/register" method="POST">      
+      
       <div class="form-floating mb-3">
-        <input type="email" name="email" class="form-control" autofocus id="EmailAddress" placeholder=" "
+      <input type="text" name="registerName" class="form-control" autofocus id="EmailAddress" placeholder=" " value="Lighthouse Labs"
+        style="width:30rem">
+      <label for="EmailAddress">Name</label>
+
+    </div>
+      <div class="form-floating mb-3">
+        <input type="email" name="registerEmail" class="form-control" autofocus id="EmailAddress" placeholder=" " value="example@example.com"
           style="width:30rem">
         <label for="EmailAddress">Email address</label>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="password" name="password" class="form-control" autofocus id="UserPassword" placeholder=" "
+        <input type="password" name="registerPassword" class="form-control" autofocus id="UserPassword" placeholder=" " value="password"
           style="width:30rem">
         <label for="UserPassword">Password</label>
       </div>

@@ -44,7 +44,7 @@ $(() => {
                 </form>
               </td>
               <td>
-                <form method="POST" action="/resource-modify/delete/${element.resource_id}">
+                <form method="POST" action="/resource-modify/delete/${element.id}">
                   <button type="submit" class="btn btn-outline-danger">Delete</button>
                 </form>
               </td>

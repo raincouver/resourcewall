@@ -9,6 +9,7 @@ body {
   background-color: #F0FFFF;
   height: 100%;
   width: 100%;
+
 }
 
 h1 {
@@ -32,6 +33,7 @@ main {
 
 #tags-container {
   display: flex;
+  justify-content: space-around;
   border-radius: 20px;
   padding: 10px;
   height: 80%;
@@ -42,20 +44,28 @@ main {
 
   .tag-element {
     border: 1px solid black;
+    background-color: #f2b03d;
+    width: 25%;
+    text-align: center;
     border-radius: 20px;
     padding: 10px;
     display: inline-block;
+    background-color: #faaa69;
 
   }
   .like {
     display: inline;
     float: left;
     margin-left: 20px;
+feature-categories-pages
+    background-color: 055596;
   }
 
   .rating {
     display: inline;
     float: left;
     margin-left: 20px;
+ feature-categories-pages
+    background-color: 055596;
   }
 }
