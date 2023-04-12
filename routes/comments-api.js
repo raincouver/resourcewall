@@ -11,13 +11,13 @@ const userQueries = require('../db/queries/resource');
 
 
 router.use((req, res, next) => {
-  console.log(req.url, '@resourceAPI@', Date(Date.now()));
+  console.log(req.url, '@commentsAPI@', Date(Date.now()));
   next();
 })
 
-router.get('/resource-api', (req, res) => {
-
-  userQueries.getResourceById()
+router.get('/:id', (req, res) => {
+  console.log('reqParams: ', req.params)
+  userQueries.getCommentsById(req.params.id)
   .then(resource => {
     res.json({resource});
   })
@@ -26,5 +26,21 @@ router.get('/resource-api', (req, res) => {
       .status(500)
       .json({ error: err.message });
   });
+});
+
+
+router.post('/:id', (req, res) => {
+
+  userQueries.addComment(1, req.params.id, req.body['comment-text'])
+  .then(comment => {
+    res.json({comment});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 
 });
+
+module.exports = router;

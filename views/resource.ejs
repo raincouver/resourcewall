@@ -7,7 +7,7 @@
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/resource.css">
 
-  <script src="<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
   <title>Resource Page
@@ -46,7 +46,7 @@
     </div>
 
     <div class="comments-container">
-      <form id="comment-form" action="/resources" method="POST">
+      <form id="comment-form" action="/comments-api" method="POST">
         <div>
           <textarea id="comment-text" placeholder="Add a comment" name="comment-text" id="" cols="30"
             rows="10"></textarea>
@@ -58,25 +58,7 @@
       <h3>Comments</h3>
 
       <div class="appended-comments">
-      <article class="new-comment">
-        <p>
-          Just default test text!
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
-          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
-          ducimus reprehenderit aut officiis.
-          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
-        <p>
-      </article>
 
-      <article class="new-comment">
-        <p>
-          Just default test text!
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
-          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
-          ducimus reprehenderit aut officiis.
-          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
-        <p>
-      </article>
     </div>
     </div>
 
@@ -84,15 +66,13 @@
 
 
   <!-- Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
     integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../scripts/resource-id.js"></script>
 </body>
 
 </html>
