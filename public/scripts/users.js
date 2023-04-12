@@ -24,35 +24,35 @@
 
 
 // Client facing scripts here
-$(() => {
-  $('body').load(() => {
-    $.ajax({
-      method: 'GET',
-      url: '/users-api/user-myurls'
-    })
-    .done((response) => {
-  .then(data => { data.array.forEach(element => {
-    console.log(element.my_urls_titles);
-    const tableRow = `    
-   <tr>
-    <td>
-      ${element.my_urls_titles}
-    </td>
-    <td>
-      <form method="GET" action="/resource/<%= id %>">
-        <button type="submit" class="btn btn-outline-primary">Edit</button>
-      </form>
-    </td>
-    <td>
-      <form method="POST" action="/users/<%= id %>/delete">
-        <button type="submit" class="btn btn-outline-danger">Delete</button>
-      </form>
-    </td>
-    </tr>`;
+// $(() => {
+//   $('body').load(() => {
+//     $.ajax({
+//       method: 'GET',
+//       url: '/users-api/user-myurls'
+//     })
+//     .done((response) => {
+//   .then(data => { data.array.forEach(element => {
+//     console.log(element.my_urls_titles);
+//     const tableRow = `    
+//    <tr>
+//     <td>
+//       ${element.my_urls_titles}
+//     </td>
+//     <td>
+//       <form method="GET" action="/resource/<%= id %>">
+//         <button type="submit" class="btn btn-outline-primary">Edit</button>
+//       </form>
+//     </td>
+//     <td>
+//       <form method="POST" action="/users/<%= id %>/delete">
+//         <button type="submit" class="btn btn-outline-danger">Delete</button>
+//       </form>
+//     </td>
+//     </tr>`;
 
-    document.querySelector('#tablerows').insertAdjacentElement('beforeend', tableRow);
-  });
-  });
+//     document.querySelector('#tablerows').insertAdjacentElement('beforeend', tableRow);
+//   });
+//   });
 
 
 
@@ -156,7 +156,7 @@ $(() => {
 
 //       loadTables();
 
-});
+// });
 
 
 
@@ -174,10 +174,3 @@ $(() => {
 
 
 
-
-// Fetch resources
-$(document).ready(() => {
-  const $resultsContainer = $("#results-container");
-
-  
-})
