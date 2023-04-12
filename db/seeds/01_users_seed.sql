@@ -119,3 +119,18 @@ VALUES
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 
     '/images/trimmed/avatar8.PNG'
   );
+
+INSERT INTO users 
+  (
+    name, 
+    email, 
+    password, 
+    profile_picture_path
+  )
+VALUES 
+  ( 
+    'Mr.1', 
+    '1@1.com', 
+    '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 
+    '/images/trimmed/avatar8.PNG'
+  );
