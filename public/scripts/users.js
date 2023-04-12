@@ -91,9 +91,6 @@ $(() => {
 
 });
 
-// // Fetch resources
-// $(document).ready(() => {
-//   const $resultsContainer = $("#results-container");
 
-// })
+
 

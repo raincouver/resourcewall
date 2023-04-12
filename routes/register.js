@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const { checkUserEmails }= require('../db/queries/checkUserEmails');
+const { check_user_emails }= require('../db/queries/check_user_emails');
 
 router.use((req, res, next) => {
   console.log(req.url, '@signup@', Date.now());
@@ -15,12 +15,12 @@ router.use((req, res, next) => {
 })
 
 // GET 'Register' Route
-router.get("/register", (req, res) => {
+router.get('/', (req, res) => {
   const userId = req.session.user_id;
   
   // if logged in already, redirect to /users
   if (userId) {
-    return res.redirect("/users");
+    return res.redirect('/users');
   }
 
   res.render('register', {user: null});
