@@ -26,17 +26,17 @@ app.use(
 );
 app.use(express.static('public'));
 
-// Cookie session middleware 
+// Cookie session middleware
 app.use(cookieSession({
   name: 'session',
-  keys: ['secret'],  
+  keys: ['secret'],
 }));
 
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 
 const resourceModify = require('./routes/resource-modify');
-const userSignupRoutes = require('./routes/signup');
+// const userSignupRoutes = require('./routes/signup');
 // const resourceApiRoutes = require('./routes/resource-api');
 const userRegisterRoutes = require('./routes/register');
 const userLoginRoutes = require('./routes/login');
