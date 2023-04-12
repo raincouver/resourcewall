@@ -30,8 +30,8 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/:id', (req, res) => {
-
-  userQueries.addComment(1, req.params.id, req.body['comment-text'])
+  const userID = req.session.userSessionID;
+  userQueries.addComment(userID, req.params.id, req.body['comment-text'])
   .then(comment => {
     res.json({comment});
   })
