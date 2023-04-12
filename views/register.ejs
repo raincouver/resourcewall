@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-  <title>Sign Up</title>
+  <title>Register</title>
 </head>
 
 <header>
@@ -28,16 +28,24 @@
 
 <body>
   <main style="margin: 1em;">
-    <h3>Welcome to ResourceWall</h3>
+    <h3>Join ResourceWall</h3>
 
-    <form class="form-inline" action="/register" method="POST">
+    <form class="form-inline" action="/register" method="POST">      
+      
       <div class="form-floating mb-3">
-        <input type="email" name="email" class="form-control" autofocus id="EmailAddress" placeholder=" "
+      <input type="text" name="registerName" class="form-control" autofocus id="EmailAddress" placeholder=" " value="Lighthouse Labs"
+        style="width:30rem">
+      <label for="EmailAddress">Name</label>
+
+    </div>
+      <div class="form-floating mb-3">
+        <input type="email" name="registerEmail" class="form-control" autofocus id="EmailAddress" placeholder=" " value="example@example.com"
           style="width:30rem">
         <label for="EmailAddress">Email address</label>
       </div>
+
       <div class="form-floating mb-3">
-        <input type="password" name="password" class="form-control" autofocus id="UserPassword" placeholder=" "
+        <input type="password" name="registerPassword" class="form-control" autofocus id="UserPassword" placeholder=" " value="password"
           style="width:30rem">
         <label for="UserPassword">Password</label>
       </div>

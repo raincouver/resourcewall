@@ -1,7 +1,6 @@
 
 // Client facing scripts here
 $(() => {
-
   $.ajax({
     method: 'GET',
     url: '/users-api/userinfo'
@@ -16,7 +15,7 @@ $(() => {
               <img id="userAvatar" src=${element.profile_picture_path}>
             </div>
             <div>
-              <span>Hi! ${element.email}</span>
+              <span>Hi! ${element.name}</span>
             </div>`;
 
         $('#userInfo').append(tableRow);
@@ -45,7 +44,7 @@ $(() => {
                 </form>
               </td>
               <td>
-                <form method="POST" action="/resource-modify/delete/${element.resource_id}">
+                <form method="POST" action="/resource-modify/delete/${element.id}">
                   <button type="submit" class="btn btn-outline-danger">Delete</button>
                 </form>
               </td>
@@ -92,9 +91,5 @@ $(() => {
 });
 
 
-// // Fetch resources
-// $(document).ready(() => {
-//   const $resultsContainer = $("#results-container");
 
-// })
 

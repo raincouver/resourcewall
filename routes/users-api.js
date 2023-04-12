@@ -17,7 +17,9 @@ router.use((req, res, next) => {
 
 router.get('/userinfo', (req, res) => {
 
-  userQueries.getUserInfo()
+  const id = req.session.userSessionID;
+
+  userQueries.getUserInfo(id)
   .then(data => {
     res.json({data});
   })
@@ -31,7 +33,9 @@ router.get('/userinfo', (req, res) => {
 
 router.get('/user-myurls', (req, res) => {
 
-  userQueries.getUserMyUrls()
+  const id = req.session.userSessionID;
+
+  userQueries.getUserMyUrls(id)
   .then(data => {
     res.json({data});
   })
@@ -45,7 +49,9 @@ router.get('/user-myurls', (req, res) => {
 
 router.get('/user-likedurls', (req, res) => {
 
-  userQueries.getUserLikedUrls()
+  const id = req.session.userSessionID;
+
+  userQueries.getUserLikedUrls(id)
   .then(data => {
     res.json({data});
   })
