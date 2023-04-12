@@ -1,5 +1,21 @@
 body {
+  display: flex;
   background-color: #F0FFFF;
   height: 100%;
   width: 100%;
+  justify-content: flex-start;
+  align-items: normal;
+
+  header #navbar-header {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    background-color: #fff;
+    padding: 1rem;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
 }

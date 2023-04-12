@@ -20,7 +20,7 @@ body {
 }
 
 #comment-text {
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 10px;
 }
 .content-container{
@@ -43,7 +43,7 @@ body {
   padding: 24px;
 }
 
-.button-contaiiner {
+.button-container {
   display: flex;
   flex-direction: row-reverse;
 }
@@ -54,7 +54,7 @@ textarea {
 
 .content-description {
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 2%;
 }
 
@@ -63,21 +63,34 @@ textarea {
     margin-top: 2%;
     margin-right: 5%;
     border-radius: 15px;
+    background-color: rgba(168,0,37,255);
+    font-weight: 600;
+    color: white;
+    border-color: none;
   }
+
+  .btn-danger:active {
+    transform: translateY(3px);
+  } 
+
 }
 
 .new-comment {
   border: 2px solid black;
-  border-radius: 25px;
+  border-radius: 10px;
   padding: 2%;
   margin-top: 3%;
 }
 
 .comment-text {
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 25px;
 }
 
-.btn-success {
-  border-radius: 15px;
-}
+.btn-primary:active {
+  transform: translateY(3px);
+} 
+
+.btn-success:active {
+  transform: translateY(3px);
+} 
