@@ -15,7 +15,7 @@ router.use((req, res, next) => {
 })
 
 // GET 'Register' Route
-app.get("/register", (req, res) => {
+router.get("/register", (req, res) => {
   const userId = req.session.user_id;
   
   // if logged in already, redirect to /users

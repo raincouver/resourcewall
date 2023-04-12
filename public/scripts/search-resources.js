@@ -1,6 +1,7 @@
 $(() => {
 
   const createSearchItemElement = (item) => {
+    console.log('item', item)
     return `
     <a href="/resource/${item.id}">
       <article class="search-results">
