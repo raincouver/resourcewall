@@ -1,7 +1,6 @@
 
 // Client facing scripts here
 $(() => {
-
   $.ajax({
     method: 'GET',
     url: '/users-api/userinfo'
@@ -16,7 +15,7 @@ $(() => {
               <img id="userAvatar" src=${element.profile_picture_path}>
             </div>
             <div>
-              <span>Hi! ${element.email}</span>
+              <span>Hi! ${element.name}</span>
             </div>`;
 
         $('#userInfo').append(tableRow);

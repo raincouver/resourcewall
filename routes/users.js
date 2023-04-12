@@ -15,45 +15,13 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
-  // userQueries.getUserInfo()
-  //   .then(userInfo => {
-  //     res.json({ userInfo });
-  //   })
-  //   .catch(err => {
-  //     res
-  //       .status(500)
-  //       .json({ error: err.message });
-  //   });
 
+  // const id = req.session.userSessionID;
+  // console.log(id);
 
-      // const templetVars = {
-      //   'userMyUrls' : userMyUrls
-      // }
+  // userQueries.getUserInfo(`%${id}%`);
 
-    //   userQueries.getUserLikedUrls()
-    //     .then(usersLikedUrls => {
-    //       res.json({ usersLikedUrls });
-    //     })
-    //     .catch(err => {
-    //       res
-    //         .status(500)
-    //         .json({ error: err.message });
-    //     });
   res.render('users');
 }); 
-
-router.post("/users/:id/delete", (req, res) => {
-
-  const id = req.params.id;
-  delete urlDatabase[id];
-  res.redirect('/users');
-});
-
-router.post("/users/:id/dislike", (req, res) => {
-
-  const id = req.params.id;
-  delete urlDatabase[id];
-  res.redirect('/users');
-});
 
 module.exports = router;
