@@ -5,8 +5,11 @@ const searchAllResources = (searchInput) => {
   // search is case insensitive using ILIKE
   return db
     .query(
-      `SELECT resources.title, 
-      avg(ratings.rating) as average_rating
+      `SELECT resources.title,
+      resources.id, 
+      resources.url, 
+      categories.name as category,  
+      ROUND(AVG(ratings.rating), 1) as average_rating
       FROM resources
       JOIN ratings ON resources.id = resource_id
       JOIN users ON resources.user_id = users.id
@@ -15,7 +18,7 @@ const searchAllResources = (searchInput) => {
       OR resources.url ILIKE $1
       OR users.name ILIKE $1
       OR categories.name ILIKE $1
-      GROUP BY resources.title
+      GROUP BY resources.title, resources.id, categories.name
       ORDER BY resources.id;`, [searchInput]
     )
     .then((result) => {

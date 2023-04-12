@@ -46,14 +46,14 @@ router.post("/users/:id/delete", (req, res) => {
 
   const id = req.params.id;
   delete urlDatabase[id];
-  res.redirect('/urls');
+  res.redirect('/users');
 });
 
 router.post("/users/:id/dislike", (req, res) => {
 
   const id = req.params.id;
   delete urlDatabase[id];
-  res.redirect('/urls');
+  res.redirect('/users');
 });
 
 module.exports = router;

@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/search.css" />
 
-  <script src="../routes/search.js"></script>
-  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer type="text/javascript" src="/scripts/search-resources.js"></script>
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -24,7 +24,7 @@
 </head>
 
 <header>
-  <% include('partials/_header') %>
+  <% include('./partials/_header') %>
 </header>
 
 <body>
@@ -34,11 +34,8 @@
     <input type="search" id="search-input">
     <button type="submit">Submit</button>
   </form>
-  <div class="search-results">
-    <div class="results">
-      <div class="container" id="results-container">Results:</div>
-    </div>
-  </div>
+
+  <div class="container" id="results-container"></div>
 
 </body>
 
