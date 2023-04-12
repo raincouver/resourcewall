@@ -16,7 +16,6 @@ router.get('/:id', (req, res) => {
   const resource = req.params.id;
   getResourceById(resource)
   .then((resourceData) => {
-    console.log('resourceData: ', resourceData);
     const templateVars = {'resource': resourceData[0]};
     console.log('resource data: ',resourceData[0])
     res.render('resource', templateVars);

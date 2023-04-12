@@ -15,7 +15,7 @@ likes ON likes.resource_id = resources.id
 JOIN
 ratings ON ratings.resource_id = resources.id
 WHERE
-categories.id = 1
+categories.id = $1
 GROUP BY
 categories.id,
 categories.name,

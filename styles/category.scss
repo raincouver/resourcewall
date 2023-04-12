@@ -33,6 +33,7 @@ main {
 
 #tags-container {
   display: flex;
+  flex-direction: column;
   border-radius: 20px;
   padding: 10px;
   height: 80%;
@@ -53,13 +54,13 @@ main {
     display: inline;
     float: left;
     margin-left: 20px;
-    background-color: 055596;
+
   }
 
   .rating {
     display: inline;
     float: left;
     margin-left: 20px;
-    background-color: 055596;
+
   }
 }
