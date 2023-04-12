@@ -16,30 +16,50 @@ router.use((req, res, next) => {
 })
 
 router.get('/', (req, res) => {
+
+  // if user already logged in 
+  // if not direct to login page
+
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+
   res.render('addnew');
 }); 
 
+
+
 router.post('/', (req, res) => {
 
-  console.log(req.body);
-  const newUrl = {
-    'url':req.body.newUrl,
-    'title':req.body.newTitle,
-    'description':req.body.newDescription,
-  };
+  const newCategory = req.body.newTag;
 
-  const newCategory = {
-    'user_id':req.body.user_id,
-    'category':req.body.newTitle
-  }
+  console.log(newCategory);
 
-  addNewQueries.addnewResource(newUrl);  
-  addNewQueries.addnewCategory(newCategory);
-  
+  addNewQueries.addnewCategory(newCategory)
+  .then(() => {
+    addNewQueries.getCategoryID(newCategory)
+      .then(data => {
+
+        const newUrl = {
+          'user_id': req.session.userSessionID,
+          'category_id': data[0].id,
+          'url': req.body.newUrl,
+          'title': req.body.newTitle,
+          'description': req.body.newDescription,
+        };
+        console.log(newUrl);
+
+        addNewQueries.addnewResource(newUrl);
+      })
+      .catch((err) => {
+        console.error('Error adding resource:', err);
+        res.status(500).send(err);
+      })
+  })
   res.redirect('/users');
 }); 
-
-
 
 
 module.exports = router;

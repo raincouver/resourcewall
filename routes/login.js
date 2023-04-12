@@ -11,8 +11,6 @@ const router  = express.Router();
 const loginQueries = require('../db/queries/login');
 const bcrypt = require("bcrypt");
 
-
-
 router.get('/', (req, res) => {
   // if user already logged in direct to user home page
 

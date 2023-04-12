@@ -16,10 +16,14 @@ router.use((req, res, next) => {
 
 router.get('/', (req, res) => {
 
-  // const id = req.session.userSessionID;
-  // console.log(id);
+  // if user already logged in 
+  // if not direct to login page
 
-  // userQueries.getUserInfo(`%${id}%`);
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
 
   res.render('users');
 }); 

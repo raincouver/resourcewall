@@ -1,35 +1,42 @@
 const db = require('../connection');
 
 
-const addnewResource = (data) => {
+const addnewCategory = (data) => {
 
-  const queryAddnew   = `
-                        INSERT INTO resources (url, title, description, user_id)
-                        VALUES (${data.newUrl}, ${data.newTitle}, ${data.newDescription}, ${data.user_id});
-                        `;
+  console.log(data);
+  return db.query(`
+            INSERT INTO categories (name)
+            VALUES ($1);`, [data])
+  .then(
+    console.log('add to categories successfully')
+  );
 
-  return db.query(queryAddnew)
+};
+
+const getCategoryID = (data) => {
+
+  return db.query(`
+                  SELECT id
+                  FROM categories
+                  WHERE name = $1
+                  ORDER BY id DESC
+                  LIMIT 1;`, [data])
     .then(data => {
       console.log(data.rows);
       return data.rows;
     });
 };
 
-const addnewCategory = (data) => {
+const addnewResource = (data) => {
+  
+  console.log(data);
 
-  const queryGetResourceID   = `
-                                SELECT resources.user_id, resources.id
-                                FROM resources
-                                WHERE resources.title = ${data.newTitle};
-                                `;
-
-  return db.query(queryGetResourceID)
-    .then(resourceData => {
-      const queryAddnew   = `
-      INSERT INTO categories (category, user_id, resource_id)
-      VALUES (${data.newCategory}, ${resourceData.user_id}, ${resourceData.resource_id});
-      `;
-      return db.query(queryAddnew)
-    });
+  db.query(`
+            INSERT INTO resources (url, title, description, user_id, category_id)
+            VALUES ($1, $2, $3, $4, $5);
+            `, [data.url, data.title, data.description, data.user_id, data.category_id])
+    .then(
+      console.log('add to recources successfully')
+    );
 };
-module.exports = { addnewResource, addnewCategory };
+module.exports = { addnewResource, addnewCategory, getCategoryID };
