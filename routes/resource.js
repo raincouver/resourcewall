@@ -17,8 +17,8 @@ router.get('/:id', (req, res) => {
   getResourceById(resource)
   .then((resourceData) => {
     console.log('resourceData: ', resourceData);
-    const templateVars = {resourceData};
-    console.log(resourceData)
+    const templateVars = {'resource': resourceData[0]};
+    console.log('resource data: ',resourceData[0])
     res.render('resource', templateVars);
   }).catch((error) => {
     console.log('there is an error: ', error)

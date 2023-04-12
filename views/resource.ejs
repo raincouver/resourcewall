@@ -22,20 +22,15 @@
   <section class="resource-container">
 
     <div class="content-container">
-      <H1>Resource Title</H1>
+      <H1><%= resource['title'] %></H1>
       <div class="resource-list">
         <ul>
-          <li><a href="https://www.google.com">www.exampleURL.com</a></li>
+          <li><a href="https://www.google.com"><%= resource['url'] %></a></li>
         </ul>
       </div>
 
       <div class="content-description">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium adipisci, voluptatem quod nihil,
-          praesentium corrupti assumenda dolorum harum et reiciendis odit temporibus dignissimos magni fugit aliquam
-          ducimus reprehenderit aut officiis.
-          Tenetur voluptatibus libero nihil! Dolore repellat inventore excepturi soluta nesciunt, illum atque dolor
-          temporibus quisquam. Dolores cupiditate excepturi et veritatis totam quis maiores illo, in, quidem cumque
-          modi, porro eligendi</p>
+        <p><%= resource['description'] %></p>
       </div>
 
       <div class="tags-container">
