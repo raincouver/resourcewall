@@ -1,0 +1,101 @@
+header #navbar-header {
+  display: flex;
+  width: auto;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  
+}
+
+
+// .navbar-toggler {
+//     color: lightblue;
+// }
+
+// .navbar-nav .nav-item {
+//     color: black;
+  
+// }
+
+body {
+  display: flex;
+  width: 100%;
+  align-items: normal;
+  justify-content: flex-start;
+  
+  main { 
+    margin-left: 1rem;
+    margin-right: 1rem; 
+
+    #userInfo {
+
+      #userAvatar {
+        padding: 1rem; 
+        border-radius: 40%;
+      }
+
+      span {
+        display: flex;
+        padding: 1rem;
+      } 
+    }
+
+    #myUrls {
+      display: flex;
+      padding: 1rem;
+      font-size: 1rem;
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      td, th {
+        padding: 10px;
+        text-align: left;
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+  
+    }
+
+    #likedUrls {
+      display: flex;
+      padding: 1rem;
+      font-size: 1rem;
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        
+      }
+      
+      td, th {
+        padding: 10px;
+        text-align: left;
+        
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+      
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      
+  
+    }
+  }
+
+ 
+
+}
+
