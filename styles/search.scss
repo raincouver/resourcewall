@@ -11,7 +11,32 @@
     border-radius: 5px;
   }
 
-  .results-body {
-    justify-content: flex-start;
+  #results-container {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    width: 100%;
   }
+
+
 }
+
+.search-results {
+  margin: 2rem; 
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  
+} 
+
+.search-results:hover {
+    box-shadow: 5px 5px rgba(0, 0, 255, .2);
+}
+
+.search-results:active {
+  transform: translateY(3px);
+} 

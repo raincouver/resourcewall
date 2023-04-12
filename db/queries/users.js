@@ -8,13 +8,13 @@ const queryUserInfo   = `
                         `;
 
 const queryMyUrls     = `
-                        SELECT title as my_urls_titles
+                        SELECT resources.id as resource_id, title as my_urls_titles
                         FROM resources
                         WHERE user_id = 1;
                         `;
 
 const queryLikedUrls  = `
-                        SELECT resources.title as liked_urls_titles
+                        SELECT likes.id as likes_id, resources.id as id, resources.title as liked_urls_titles
                         FROM users 
                         INNER JOIN likes ON users.id = likes.user_id
                         INNER JOIN resources ON likes.resource_id = resources.id

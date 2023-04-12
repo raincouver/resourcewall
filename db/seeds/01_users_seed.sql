@@ -12,7 +12,7 @@ VALUES
     'Valkyrie', 
     'northstar@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar1.PNG'
+    '/images/trimmed/avatar1.PNG'
   );
 
 INSERT INTO users 
@@ -27,7 +27,7 @@ VALUES
     'Dr. Mary Somers', 
     'adastra@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar2.PNG'
+    '/images/trimmed/avatar2.PNG'
   );
 
 INSERT INTO users 
@@ -42,7 +42,7 @@ VALUES
     'Ramya Parekh', 
     'rampart@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar3.PNG'
+    '/images/trimmed/avatar3.PNG'
   );
 
 INSERT INTO users 
@@ -57,7 +57,7 @@ VALUES
     'Rene H. Blasey', 
     'wraith@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar4.PNG'
+    '/images/trimmed/avatar4.PNG'
   );
 
   INSERT INTO users 
@@ -72,7 +72,7 @@ VALUES
     'Dr. Milo', 
     'docmilo@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar5.PNG'
+    '/images/trimmed/avatar5.PNG'
   );
 
 INSERT INTO users 
@@ -87,7 +87,7 @@ VALUES
     'Ashleigh Reid', 
     'ash@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.',
-    'resourcewall/public/images/trimmed/avatar6.PNG'
+    '/images/trimmed/avatar6.PNG'
   );
 
 INSERT INTO users 
@@ -102,7 +102,7 @@ VALUES
     'Brigitte', 
     'shieldknight@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 
-    'resourcewall/public/images/trimmed/avatar7.PNG'
+    '/images/trimmed/avatar7.PNG'
   );
 
 INSERT INTO users 
@@ -117,5 +117,5 @@ VALUES
     'Hachiko', 
     'hachiko@gmail.com', 
     '$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u.', 
-    'resourcewall/public/images/trimmed/avatar8.PNG'
+    '/images/trimmed/avatar8.PNG'
   );

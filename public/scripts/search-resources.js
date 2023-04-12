@@ -1,14 +1,24 @@
 $(() => {
 
   const createSearchItemElement = (item) => {
+    console.log('item', item)
     return `
-     <div>${item.title}</div>
-     <div>${item.average_rating}</div>
-     <div>--------</div>
+    <a href="/resource/${item.id}">
+      <article class="search-results">
+        <div class="results-body">
+          <div>Title: ${item.title}</div>
+          <div>URL: ${item.url}</div>
+          <div>Category: ${item.category}</div>
+          <div>Rating: ${item.average_rating}</div>
+        </div>  
+      </article>
     `
   }
 
   const renderSearch = (items) => {
+    // empty child nodes before rending results
+    $("#results-container").empty();
+    
     for (let item of items) {
       $("#results-container").append(createSearchItemElement(item))
     }
