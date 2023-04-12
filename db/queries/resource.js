@@ -1,7 +1,7 @@
 const db = require('../connection');
 
 const querygetResourceById = `
-                        SELECT title, url, description, categories.name
+                        SELECT title, url, description, categories.name, categories.id as category_id
                         FROM resources
                         JOIN categories on resources.category_id = categories.id
                         WHERE resources.id = $1;
