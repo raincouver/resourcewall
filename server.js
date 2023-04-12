@@ -32,7 +32,7 @@ app.use(express.static('public'));
 const resourceModify = require('./routes/resource-modify');
 const userSignupRoutes = require('./routes/signup');
 const userLoginRoutes = require('./routes/login');
-const addNewRoutes = require('./routes/addNew');
+const addNewRoutes = require('./routes/addnew');
 const categoryRoutes = require('./routes/category');
 const resourceRoutes = require('./routes/resource');
 const usersRoutes = require('./routes/users');
