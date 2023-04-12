@@ -5,7 +5,8 @@ const searchAllResources = (searchInput) => {
   // search is case insensitive using ILIKE
   return db
     .query(
-      `SELECT resources.title, 
+      `SELECT resources.title,
+      resources.id, 
       resources.url, 
       categories.name as category,  
       ROUND(AVG(ratings.rating), 1) as average_rating
