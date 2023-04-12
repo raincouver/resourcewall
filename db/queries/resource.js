@@ -1,9 +1,10 @@
 const db = require('../connection');
 
 const querygetResourceById = `
-                        SELECT title, url, description
+                        SELECT title, url, description, categories.name
                         FROM resources
-                        WHERE id = $1;
+                        JOIN categories on resources.category_id = categories.id
+                        WHERE resources.id = $1;
                         `;
 
 const querygetCommentsById = `

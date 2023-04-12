@@ -22,7 +22,7 @@
   <section class="resource-container">
 
     <div class="content-container">
-      <H1><%= resource['title'] %></H1>
+      <H1><%= resource['title'] %> <span><a href="/categories/:id"><button class="btn btn-success"> <%= resource['name'] %></button></span></a></H1>
       <div class="resource-list">
         <ul>
           <li><a href="https://www.google.com"><%= resource['url'] %></a></li>
@@ -34,7 +34,6 @@
       </div>
 
       <div class="tags-container">
-        <button class="btn btn-warning">Category</button>
         <button class="btn btn-warning">Like</button>
         <button class="btn btn-warning">Rating</button>
       </div>

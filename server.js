@@ -26,10 +26,10 @@ app.use(
 );
 app.use(express.static('public'));
 
-// Cookie session middleware 
+// Cookie session middleware
 app.use(cookieSession({
   name: 'session',
-  keys: ['secret'],  
+  keys: ['secret'],
 }));
 
 // Separated Routes for each Resource
