@@ -14,7 +14,7 @@ const bcrypt = require("bcrypt");
 router.get('/', (req, res) => {
   // if user already logged in direct to user home page
 
-  let userSessionID = req.session.userSessionID;
+  const userSessionID = req.session.userSessionID;
 
   if (userSessionID) {
     return res.redirect('/users');
@@ -59,11 +59,9 @@ router.post('/', (req, res) => {
       req.session.userSessionID = foundUser.id;
 
       res.redirect('/users');
-
-      // console.log('1', req.session.userSessionID);
     })
     .catch((err) => {
-      console.error('Error logging in:', error);
+      console.error('Error logging in:', err);
       res.status(500).send(err);
     });
 
