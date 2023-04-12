@@ -6,6 +6,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/resource.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -22,7 +23,7 @@
   <section class="resource-container">
 
     <div class="content-container">
-      <H1><%= resource['title'] %> <span><a href="/category/<%= resource.category_id %>"><button class="btn btn-success"> <%= resource['name'] %></button></span></a></H1>
+      <H1><%= resource['title'] %> <span><a href="/category/<%= resource.category_id %>"><button class="btn btn-success"> <span><i class="fa-solid fa-hashtag" style="color: #fff;"></i></span><%= resource['name'] %></button></span></a></H1>
       <div class="resource-list">
         <ul>
           <li><a href="<%= resource['url'] %>"><%= resource['url'] %></a></li>
@@ -46,7 +47,7 @@
             rows="10"></textarea>
         </div>
         <div class="button-container">
-          <button type="submit" class="btn btn-primary">Post Comment</button>
+          <button type="submit" class="btn btn-danger">Post Comment</button>
         </div>
       </form>
       <h3>Comments</h3>
