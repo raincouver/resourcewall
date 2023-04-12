@@ -1,3 +1,4 @@
+
 const db = require('../connection');
 
 const queryUserInfo   = `
@@ -46,4 +47,7 @@ const getUserLikedUrls = () => {
 };
 
 
+
+
 module.exports = { getUserInfo, getUserLikedUrls, getUserMyUrls };
+

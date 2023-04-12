@@ -31,24 +31,31 @@ app.use(express.static('public'));
 
 const resourceModify = require('./routes/resource-modify');
 const userSignupRoutes = require('./routes/signup');
+// const resourceApiRoutes = require('./routes/resource-api');
+const userRegisterRoutes = require('./routes/register');
 const userLoginRoutes = require('./routes/login');
 const addNewRoutes = require('./routes/addnew');
 const categoryRoutes = require('./routes/category');
 const resourceRoutes = require('./routes/resource');
 const usersRoutes = require('./routes/users');
 const usersApiRoutes = require('./routes/users-api');
+const searchRoutes = require('./routes/search');
+const commentsRoutes = require('./routes/comments-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/resource-modify', resourceModify);
+// app.use('/resource-api', resourceApiRoutes);
 app.use('/resource', resourceRoutes);
 app.use('/category', categoryRoutes);
 app.use('/addnew', addNewRoutes);
 app.use('/login', userLoginRoutes);
-app.use('/signup', userSignupRoutes);
+app.use('/register', userRegisterRoutes);
 app.use('/users', usersRoutes);
 app.use('/users-api', usersApiRoutes);
+app.use('/search', searchRoutes);
+app.use('/comments-api', commentsRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
