@@ -37,7 +37,7 @@ app.use(cookieSession({
 const userLogoutRoutes = require('./routes/logout');
 const resourceModify = require('./routes/resource-modify');
 // const userSignupRoutes = require('./routes/signup');
-// const resourceApiRoutes = require('./routes/resource-api');
+const resourceApiRoutes = require('./routes/resource-api');
 const userRegisterRoutes = require('./routes/register');
 const userLoginRoutes = require('./routes/login');
 const addNewRoutes = require('./routes/addnew');
@@ -53,7 +53,7 @@ const commentsRoutes = require('./routes/comments-api')
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/logout', userLogoutRoutes);
 app.use('/resource-modify', resourceModify);
-// app.use('/resource-api', resourceApiRoutes);
+app.use('/resource-api', resourceApiRoutes);
 app.use('/resource', resourceRoutes);
 app.use('/category', categoryRoutes);
 app.use('/addnew', addNewRoutes);

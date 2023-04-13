@@ -34,6 +34,7 @@ main {
 #tags-container {
   display: flex;
   justify-content: space-around;
+  flex-direction: column;
   border-radius: 20px;
   padding: 10px;
   height: 80%;
@@ -57,15 +58,11 @@ main {
     display: inline;
     float: left;
     margin-left: 20px;
-feature-categories-pages
-    background-color: 055596;
   }
 
   .rating {
     display: inline;
     float: left;
     margin-left: 20px;
- feature-categories-pages
-    background-color: 055596;
   }
 }

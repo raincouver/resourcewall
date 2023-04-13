@@ -7,19 +7,21 @@
 
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/resource');
+const resourceQueries = require('../db/queries/resource');
 
 
-router.use((req, res, next) => {
-  console.log(req.url, '@resourceAPI@', Date(Date.now()));
-  next();
-})
+// router.use((req, res, next) => {
+//   console.log(req.url, '@resourceAPI@', Date(Date.now()));
+//   next();
+// })
 
-router.get('/resource-api', (req, res) => {
+router.get('/userlikes', (req, res) => {
 
-  userQueries.getResourceById()
-  .then(resource => {
-    res.json({resource});
+  const id = req.session.userSessionID;
+
+  resourceQueries.getUserLikes(id)
+  .then(data => {
+    res.json({data});
   })
   .catch(err => {
     res
@@ -28,3 +30,5 @@ router.get('/resource-api', (req, res) => {
   });
 
 });
+
+module.exports = router;
