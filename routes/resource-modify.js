@@ -9,6 +9,7 @@ const express = require('express');
 const router  = express.Router();
 const resourceQueries = require('../db/queries/resource-modify');
 const dbQueries = require('../db/queries/resource'); 
+const bcrypt = require("bcrypt");
 
 router.use((req, res, next) => {
   console.log(req.url, '@resource-modify@', Date.now());
@@ -140,5 +141,81 @@ router.get("/rate/:id", (req, res) => {
       .json({ error: err.message });
   });
 });
+
+router.post("/newRandomAvatar/:id", (req, res) => {
+
+  const karma = Math.floor(Math.random() * 8) + 1;
+  const profile_photo = `'/images/trimmed/avatar${karma}.PNG'`;
+
+  const data = {
+    'newAvatarPath': profile_photo,
+    'user_id': req.params.id
+  };
+
+  resourceQueries.newRandomAvatar(data)
+    .then(
+      res.redirect('/users')
+    )
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+});
+
+router.post("/changepwd/:id", (req, res) => {
+
+  const password = req.body.newPwd;
+
+  //Check if email and password were not provided
+  if (!password) {
+    return res.status(400).send("<img src='https://http.cat/400'><h1>Please provide a new password!</h1>");
+  }
+
+  const data = {
+    'newPwd': bcrypt.hashSync(password, 10),
+    'user_id': req.params.id
+  };
+
+  resourceQueries.changePwd(data)
+    .then(
+      res.redirect('/users')
+    )
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+});
+
+router.post("/changeUserName/:id", (req, res) => {
+
+  const username = req.body.newName;
+
+  //Check if email and password were not provided
+  if (!username) {
+    return res.status(400).send("<img src='https://http.cat/400'><h1>Please provide a new name!</h1>");
+  }
+
+  const data = {
+    'newName': username,
+    'user_id': req.params.id
+  };
+
+  resourceQueries.changeUserName(data)
+    .then(
+      res.redirect('/users')
+    )
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+
+});
+
+
 
 module.exports = router;
