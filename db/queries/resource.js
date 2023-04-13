@@ -8,18 +8,31 @@ const querygetResourceById = `
                         `;
 
 const querygetCommentsById = `
-    SELECT message
-    FROM comments
-    WHERE resource_id = $1;
-      `;
+                        SELECT message
+                        FROM comments
+                        WHERE resource_id = $1;
+                          `;
 
 
-      const insertComment = `
-      INSERT INTO comments (user_id, resource_id, message)
-      Values ($1, $2, $3)
-      RETURNING *;
-        `;
+const insertComment = `
+                        INSERT INTO comments (user_id, resource_id, message)
+                        Values ($1, $2, $3)
+                        RETURNING *;
+                          `;
 
+const queryGetLikes = `
+                        SELECT user_id
+                        FROM likes
+                        WHERE resource_id = $1
+                        LIMIT 1;`;
+
+
+const getUserLikes = (id) => {
+  return db.query(queryGetLikes, [id])
+    .then(data => {
+      return data.rows;
+    });
+};
 
 const getResourceById = (id) => {
   return db.query(querygetResourceById, [id])
@@ -27,9 +40,6 @@ const getResourceById = (id) => {
       return resource.rows;
     });
 };
-
-
-
 
 const getCommentsById = (id) => {
   return db.query(querygetCommentsById, [id])
@@ -50,4 +60,4 @@ const addComment = function(user_id = 1, resource_id, message) {
 
 
 
-module.exports = { getResourceById, getCommentsById, addComment };
+module.exports = { getUserLikes, getResourceById, getCommentsById, addComment };
