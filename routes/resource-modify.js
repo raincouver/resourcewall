@@ -36,12 +36,9 @@ router.post("/like/:id", (req, res) => {
                   'user_id':req.session.userSessionID
                 }
                 
-                console.log(data);
-  
   resourceQueries.checkIfLiked(data)
-  .then(data => {
-    const foundLikes = data[0];
-    console.log(foundLikes);
+  .then(response => {
+    const foundLikes = response[0];
     if (!foundLikes) {
       resourceQueries.likeResource(data);
     }

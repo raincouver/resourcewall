@@ -56,7 +56,7 @@ const checkIfLiked = (data) => {
             SELECT id 
             FROM likes
             WHERE user_id = $1 
-            AND resource_id =$2;`, [data.user_id, data.resource_id])
+            AND resource_id = $2;`, [data.user_id, data.resource_id])
   .then(data => {
       console.log(data.rows);
       return data.rows;

@@ -12,32 +12,32 @@ $(() => {
 
   $('.tags-container').prepend(tableRow);
 
-  $.ajax({
-    method: 'GET',
-    url: '/resource-api/userlikes'
-  })
-    .then((response) => {
-      const foundLike = response[0];
-      alert(foundLike);
+  // $.ajax({
+  //   method: 'GET',
+  //   url: '/resource-api/userlikes'
+  // })
+  //   .then((response) => {
+  //     const foundLike = response[0];
+  //     alert(foundLike);
 
 
 
-      console.log(response);
-      response.data.forEach(element => {
-        alert(element);
+  //     console.log(response);
+  //     response.data.forEach(element => {
+  //       alert(element);
 
       
-        if (element.user_id) {
-          $("#likeButton").setAttribute("disabled", "disabled");
-          // $("#likeButton").style.backgroundColor = "#eee";
-        }
+  //       if (element.user_id) {
+  //         $("#likeButton").setAttribute("disabled", "disabled");
+  //         // $("#likeButton").style.backgroundColor = "#eee";
+  //       }
 
-        $("#likeButton").on("click", function() {
-          $("#likeButton").setAttribute("disabled", "disabled");
-        });
-      });
-    })
-    .catch(err => console.log(err));
+  //       $("#likeButton").on("click", function() {
+  //         $("#likeButton").setAttribute("disabled", "disabled");
+  //       });
+  //     });
+  //   })
+  //   .catch(err => console.log(err));
 
 
 
