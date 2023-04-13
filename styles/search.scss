@@ -81,6 +81,25 @@ body {
   cursor: pointer;
   color: rgb(79, 79, 79);
   text-decoration: none;
+
+  #results-title {
+    color: $brandColor;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  #results-url{
+    padding-left: 0.5rem;
+  }
+
+  #results-category {
+    padding-left: 0.5rem;
+  }
+
+  #results-rating {
+    padding-left: 0.5rem;
+  }
+
 } 
 
 .search-results:hover {
