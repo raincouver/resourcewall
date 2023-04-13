@@ -34,7 +34,7 @@
     <div class="content-container">
       <H1>
         <%= resource['title'] %>
-          <span><a href="/category/<%= resource.category_id %>">
+          <span><a href="/category/<%= resource.name %>">
               <button class="btn btn-success">
                 <span><i class="fa-solid fa-hashtag" style="color: #fff;"></i></span>
                 <%= resource['name'] %>
@@ -62,8 +62,8 @@
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
-          <div class="current-rating">Rating: 0 of 5</div> 
-          <input type="hidden" name="rating" id="rating"/> 
+          <div class="current-rating">Rating: 0 of 5</div>
+          <input type="hidden" name="rating" id="rating"/>
         </div>
         <!-- <button class="btn btn-danger">Rating</button> -->
 

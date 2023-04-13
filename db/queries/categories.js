@@ -15,7 +15,7 @@ likes ON likes.resource_id = resources.id
 FULL OUTER JOIN
 ratings ON ratings.resource_id = resources.id
 WHERE
-categories.id = $1
+categories.name = $1
 GROUP BY
 categories.id,
 categories.name,
