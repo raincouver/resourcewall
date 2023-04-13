@@ -8,11 +8,11 @@ COUNT(likes.id) AS likes,
 ratings.rating AS rating
 FROM
 categories
-JOIN
+FULL OUTER JOIN
 resources ON categories.id = resources.category_id
-JOIN
+FULL OUTER JOIN
 likes ON likes.resource_id = resources.id
-JOIN
+FULL OUTER JOIN
 ratings ON ratings.resource_id = resources.id
 WHERE
 categories.id = $1
