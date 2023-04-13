@@ -31,6 +31,7 @@ body {
   a {
     text-decoration: none;
     text-transform: uppercase;
+    color: black;
   }
  }
 }
@@ -89,7 +90,7 @@ textarea {
 
   .btn-danger:active {
     transform: translateY(3px);
-  } 
+  }
 
 
 }
@@ -108,8 +109,8 @@ textarea {
 
 .btn-primary:active {
   transform: translateY(3px);
-} 
+}
 
 .btn-success:active {
   transform: translateY(3px);
-} 
+}
