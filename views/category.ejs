@@ -37,10 +37,11 @@
 
 <body>
   <main>
-    <div id="h1">
-    </div>
 
-
+    <h1>
+      Category: <%= category[0].name %>
+    </h1>
+    
     <section id="tags-container">
       <table>
         <thead>
@@ -57,8 +58,25 @@
         </thead>
         <tbody id="resourcesFound">
 
-        </tbody>
-      </table>
+       <% for (let cat of category) { %>
+        <article class="cat-cards">
+          <div class="tag-element">
+            <p>
+              <%= cat.title %>
+            </p>
+          </div>
+
+          <div class="like">
+            <p>Likes: <%= cat.likes %>
+            </p>
+          </div>
+
+          <div class="rating">
+            <p>Rating: <%= cat.rating %>/5</p>
+          </div>
+        </article>
+        <% } %>
+
     </section>
 
   </main>

@@ -11,9 +11,9 @@ const searchAllResources = (searchInput) => {
       categories.name as category,  
       ROUND(AVG(ratings.rating), 1) as average_rating
       FROM resources
-      JOIN ratings ON resources.id = resource_id
-      JOIN users ON resources.user_id = users.id
-      JOIN categories ON resources.category_id = categories.id
+      FULL OUTER JOIN ratings ON resources.id = resource_id
+      FULL OUTER JOIN users ON resources.user_id = users.id
+      FULL OUTER JOIN categories ON resources.category_id = categories.id
       WHERE resources.title ILIKE $1
       OR resources.url ILIKE $1
       OR users.name ILIKE $1
