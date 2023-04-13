@@ -8,6 +8,15 @@ body {
   justify-content: flex-start;
   margin-left: 1rem; 
 
+  #error-message-container {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: center;
+    color: $brandColor;
+    font-size: 1.5rem;
+    font-weight: 600;
+    place-items: center
+  }
 }
 
 #search-heading  {
