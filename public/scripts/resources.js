@@ -4,41 +4,37 @@ $(() => {
 
   const id = window.location.pathname.replaceAll("/resource/", "");
 
-  const tableRow = `   
+  $.ajax({
+    method: 'GET',
+    url: `/resource-modify/like/${id}`
+  })
+    .then((response) => {
 
-        <form method="POST" action='/resource-modify/like/${id}'>
-        <button type="submit" class="btn btn-outline-danger" id="likeButton">Like</button>
-        </form>`;
+      const tableRow = `   
+                      <form method="POST" action='/resource-modify/like/${id}'>
+                      <button type="submit" id="likeButton" ${response.likeBtn.likeBtnStyle}>${response.likeBtn.likeBtnText}</button>
+                      </form>`;
 
-  $('.tags-container').prepend(tableRow);
+      $('.tags-container').prepend(tableRow);
 
-  // $.ajax({
-  //   method: 'GET',
-  //   url: '/resource-api/userlikes'
-  // })
-  //   .then((response) => {
-  //     const foundLike = response[0];
-  //     alert(foundLike);
+    })
+    .catch(err => console.log(err));
 
 
+    $.ajax({
+      method: 'GET',
+      url: `/resource-modify/rate/${id}`
+    })
+      .then((response) => {
+  
+        document.querySelector('.star').disabled = `${response.rateBtn.rateBtnStatus}`;
+  
+      })
+      .catch(err => console.log(err));
 
-  //     console.log(response);
-  //     response.data.forEach(element => {
-  //       alert(element);
 
-      
-  //       if (element.user_id) {
-  //         $("#likeButton").setAttribute("disabled", "disabled");
-  //         // $("#likeButton").style.backgroundColor = "#eee";
-  //       }
 
-  //       $("#likeButton").on("click", function() {
-  //         $("#likeButton").setAttribute("disabled", "disabled");
-  //       });
-  //     });
-  //   })
-  //   .catch(err => console.log(err));
-
+});
 
 
   // const ratingContainer = document.getElementById("rating-container");
@@ -89,4 +85,4 @@ $(() => {
 
 
 
-});
+

@@ -17,7 +17,7 @@ INSERT INTO likes
 VALUES 
   (
     2,
-    2
+    1
   );
 
 INSERT INTO likes 
@@ -28,7 +28,7 @@ INSERT INTO likes
 VALUES 
   (
     3,
-    3
+    1
   );  
 
 INSERT INTO likes 
@@ -39,7 +39,7 @@ INSERT INTO likes
 VALUES 
   (
     4,
-    4
+    2
   );
 
 INSERT INTO likes 
@@ -50,7 +50,7 @@ INSERT INTO likes
 VALUES 
   (
     5,
-    5
+    2
   );
 
 INSERT INTO likes 
@@ -61,7 +61,7 @@ INSERT INTO likes
 VALUES 
   (
     6,
-    6
+    3
   );
 
 INSERT INTO likes 
@@ -72,7 +72,7 @@ INSERT INTO likes
 VALUES 
   (
     7,
-    7
+    3
   );
 
 INSERT INTO likes 

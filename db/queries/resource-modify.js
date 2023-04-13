@@ -53,8 +53,23 @@ const checkIfLiked = (data) => {
 
   console.log(data);
   return db.query(`
-            SELECT id 
+            SELECT id as likes_id
             FROM likes
+            WHERE user_id = $1 
+            AND resource_id = $2;`, [data.user_id, data.resource_id])
+  .then(data => {
+      console.log(data.rows);
+      return data.rows;
+  });
+
+};
+
+const checkIfRated = (data) => {
+
+  console.log(data);
+  return db.query(`
+            SELECT id as ratings_id
+            FROM ratings
             WHERE user_id = $1 
             AND resource_id = $2;`, [data.user_id, data.resource_id])
   .then(data => {
@@ -66,4 +81,4 @@ const checkIfLiked = (data) => {
 
 module.exports = { 
   // changePassword, 
-  deleteResource, dislikeResource, likeResource, rateResource, checkIfLiked };
+  deleteResource, dislikeResource, likeResource, rateResource, checkIfLiked, checkIfRated };
