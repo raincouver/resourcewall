@@ -5,6 +5,7 @@ body {
   width: 100%;
   justify-content: flex-start;
   align-items: normal;
+  
 
   header #navbar-header {
     display: flex;
@@ -15,7 +16,11 @@ body {
   }
 }
 
-main {
+form {
   display: flex;
   flex-direction: column;
+
+  button:active {
+    transform: translateY(3px);
+  }
 }
