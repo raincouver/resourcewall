@@ -8,7 +8,7 @@ VALUES
   (
     1,
     1,
-    1
+    5
   );
 
 INSERT INTO ratings 
@@ -20,8 +20,8 @@ INSERT INTO ratings
 VALUES 
   (
     2,
-    2,
-    2
+    1,
+    5
   );
 
 INSERT INTO ratings 
@@ -33,8 +33,8 @@ INSERT INTO ratings
 VALUES 
   (
     3,
-    3,
-    3
+    1,
+    4
   );
 
 INSERT INTO ratings 
@@ -46,7 +46,7 @@ INSERT INTO ratings
 VALUES 
   (
     4,
-    4,
+    1,
     4
   );
 
@@ -59,7 +59,7 @@ INSERT INTO ratings
 VALUES 
   (
     5,
-    5,
+    2,
     5
   );
 
@@ -72,7 +72,7 @@ INSERT INTO ratings
 VALUES 
   (
     6,
-    6,
+    2,
     4
   );
 

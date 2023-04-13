@@ -23,12 +23,49 @@ router.post("/delete/:id", (req, res) => {
   res.redirect('/users');
 });
 
+
 router.post("/dislike/:id", (req, res) => {
 
   const id = req.params.id;
   resourceQueries.dislikeResource(id);
   res.redirect('/users');
 });
+
+
+
+router.get("/like/:id", (req, res) => {
+
+  const data = {
+                  'resource_id':req.params.id,
+                  'user_id':req.session.userSessionID
+                }
+                
+  resourceQueries.checkIfLiked(data)
+  .then(response => {
+
+    let likeBtn = {
+                    'likeBtnText': 'I LIKED IT ALREADY!',
+                    'likeBtnStyle': 'class="btn btn-lg btn-primary" disabled'
+                  };
+
+    if (!response[0]) {
+
+      likeBtn = {
+                  'likeBtnText': 'I LIKE IT!',
+                  'likeBtnStyle': 'class="btn btn-lg btn-primary"'
+                };
+
+    }
+
+    res.json({likeBtn});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
+});
+
 
 router.post("/like/:id", (req, res) => {
 
@@ -43,10 +80,12 @@ router.post("/like/:id", (req, res) => {
     if (!foundLikes) {
       resourceQueries.likeResource(data);
     }
-  })
+  });
 
-  // res.redirect('/users');
+  res.redirect(`/resource/${req.params.id}`);
 });
+
+
 
 router.post("/rate/:id", (req, res) => {
   console.log('req.body.rating', req.body.rating)
@@ -57,10 +96,49 @@ router.post("/rate/:id", (req, res) => {
                   'user_id': req.session.userSessionID,
                   'rating': req.body.rating
                 };
+  resourceQueries.checkIfRated(data)
+  .then(response => {
+    
+    if (!response[0]) {
+      dbQueries.addRating(data);
+      console.log('Rating added to db')
+    }
+  });
 
-  dbQueries.addRating(data);
-  console.log('Rating added to db')
-  // res.redirect('/users');
+  res.redirect(`/resource/${req.params.id}`);
+});
+
+
+
+router.get("/rate/:id", (req, res) => {
+
+  const data = {
+                  'resource_id':req.params.id,
+                  'user_id':req.session.userSessionID
+                }
+                
+  resourceQueries.checkIfRated(data)
+  .then(response => {
+
+    let rateBtn = {
+                    'rateBtnStatus': true,
+                  };
+
+    if (!response[0]) {
+
+      rateBtn = {
+                  'rateBtnStatus': false,
+                };
+
+    }
+
+    res.json({rateBtn});
+  })
+  .catch(err => {
+    res
+      .status(500)
+      .json({ error: err.message });
+  });
 });
 
 module.exports = router;
