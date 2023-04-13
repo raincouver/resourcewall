@@ -29,5 +29,36 @@ router.post("/dislike/:id", (req, res) => {
   res.redirect('/users');
 });
 
+router.post("/like/:id", (req, res) => {
 
+  const data = {
+                  'resource_id':req.params.id,
+                  'user_id':req.session.userSessionID
+                }
+                
+                console.log(data);
+  
+  resourceQueries.checkIfLiked(data)
+  .then(data => {
+    const foundLikes = data[0];
+    console.log(foundLikes);
+    if (!foundLikes) {
+      resourceQueries.likeResource(data);
+    }
+  })
+
+  // res.redirect('/users');
+});
+
+router.post("/rate/:id", (req, res) => {
+
+  const data = {
+                  'resource_id': req.params.id,
+                  'user_id': req.session.userSessionID,
+                  'rating': req.body.rating
+                };
+
+  resourceQueries.rateResource(data);
+  // res.redirect('/users');
+});
 module.exports = router;

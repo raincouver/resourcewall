@@ -7,21 +7,27 @@
 
  */
 
-const { getResourceById } = require('../db/queries/resource')
+const { getResourceById, getUserLikes } = require('../db/queries/resource')
 
 const express = require('express');
 const router  = express.Router();
 
 router.get('/:id', (req, res) => {
   const resource = req.params.id;
+
   getResourceById(resource)
   .then((resourceData) => {
     console.log('resourceData: ', resourceData);
-    const templateVars = {'resource': resourceData[0]};
-    console.log('resource data: ',resourceData[0])
-    res.render('resource', templateVars);
-  }).catch((error) => {
-    console.log('there is an error: ', error)
+
+      const templateVars = {
+        'resource': resourceData[0]
+      };
+
+      console.log('templateVars: ', templateVars)
+      res.render('resource', templateVars);
+  })
+  .catch((error) => {
+    console.log('Getting resource error: ', error)
   })
 });
 

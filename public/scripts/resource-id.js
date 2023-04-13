@@ -34,7 +34,7 @@ $(document).ready(() => {
 
   // function to get comments from the DB and render with our function
   const loadComments = function() {
-    const id = window.location.pathname.slice(-1);
+    const id = window.location.pathname.replaceAll("/resource/", "");
     $.ajax(`/comments-api/${id}`,  { //future reference, use $.get()
       method: "GET"
     }).then(function(comments) {
@@ -51,7 +51,7 @@ $(document).ready(() => {
   // actions taken on resource form submission
   $('#comment-form').on('submit', function(event) {
     event.preventDefault();
-    const id = window.location.pathname.slice(-1);
+    const id = window.location.pathname.replaceAll("/resource/", "");
 
 
       const formData = $(this).serialize();

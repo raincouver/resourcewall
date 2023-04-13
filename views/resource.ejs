@@ -1,17 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+    <link rel="stylesheet" href="/styles/resource.css">
+  
+    <script src="/vendor/jquery-3.0.0.js"></script>
 
-<head>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="/styles/resource.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-
-  <title>Resource Page
-  </title>
+  <title>Resource</title>
 </head>
 
 <header>
@@ -20,25 +29,60 @@
 
 <body>
   <section class="resource-container">
-
+  
     <div class="content-container">
-      <H1><%= resource['title'] %> <span><a href="/categories/:id"><button class="btn btn-success"> <%= resource['name'] %></button></span></a></H1>
+      <H1>
+        <%= resource['title'] %>
+          <span><a href="/categories/:id">
+              <button class="btn btn-success">
+                <%= resource['name'] %>
+              </button>
+          </span></a>
+      </H1>
       <div class="resource-list">
         <ul>
-          <li><a href="https://www.google.com"><%= resource['url'] %></a></li>
+          <li><a href="https://www.google.com">
+              <%= resource['url'] %>
+            </a></li>
         </ul>
       </div>
-
+  
       <div class="content-description">
-        <p><%= resource['description'] %></p>
+        <p>
+          <%= resource['description'] %>
+        </p>
       </div>
-
+  
       <div class="tags-container">
-        <button class="btn btn-warning">Like</button>
-        <button class="btn btn-warning">Rating</button>
+
+
+        <!-- <div id="ratingResource">
+          <div id="rating">
+            <button class="rating-btn" value="1">1</button>
+            <button class="rating-btn" value="2">2</button>
+            <button class="rating-btn" value="3">3</button>
+            <button class="rating-btn" value="4">4</button>
+            <button class="rating-btn" value="5">5</button>
+            <button id="submit-rating-btn">Submit Rating</button>
+          </div>
+          <div id="average-rating"></div>
+        </div> -->
+
+        <div id="rating-container">
+          <p>Rate this product:</p>
+          <button class="rating-btn btn btn-outline-danger" value="1">★</button>
+          <button class="rating-btn btn btn-outline-danger" value="2">★</button>
+          <button class="rating-btn btn btn-outline-danger" value="3">★</button>
+          <button class="rating-btn btn btn-outline-danger" value="4">★</button>
+          <button class="rating-btn btn btn-outline-danger" value="5">★</button>
+          <button id="submit-btn">Submit Rating</button>
+        </div>
+
+
+
       </div>
     </div>
-
+  
     <div class="comments-container">
       <form id="comment-form" action="/comments-api" method="POST">
         <div>
@@ -50,12 +94,12 @@
         </div>
       </form>
       <h3>Comments</h3>
-
+  
       <div class="appended-comments">
-
+  
+      </div>
     </div>
-    </div>
-
+  
   </section>
 
 
@@ -67,6 +111,8 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="../scripts/resource-id.js"></script>
+        <!-- App JS -->
+        <script type="text/javascript" src="/scripts/resources.js"></script>
 </body>
 
 </html>

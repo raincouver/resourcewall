@@ -25,6 +25,45 @@ const dislikeResource = (id) => {
 
 };
 
+const likeResource = (data) => {
+
+  console.log(data);
+  return db.query(`
+            INSERT INTO likes (user_id,resource_id)
+            VALUES ($1, $2);`, [data.user_id, data.resource_id])
+  .then(
+    console.log('Liked the resource successfully')
+  );
+
+};
+
+const rateResource = (data) => {
+
+  console.log(data);
+  return db.query(`
+            INSERT INTO likes (user_id, resource_id, rating)
+            VALUES ($1, $2, $3);`, [data.user_id, data.resource_id, data.rating])
+  .then(
+    console.log('rated the resource successfully')
+  );
+
+};
+
+const checkIfLiked = (data) => {
+
+  console.log(data);
+  return db.query(`
+            SELECT id 
+            FROM likes
+            WHERE user_id = $1 
+            AND resource_id =$2;`, [data.user_id, data.resource_id])
+  .then(data => {
+      console.log(data.rows);
+      return data.rows;
+  });
+
+};
+
 module.exports = { 
   // changePassword, 
-  deleteResource, dislikeResource };
+  deleteResource, dislikeResource, likeResource, rateResource, checkIfLiked };
