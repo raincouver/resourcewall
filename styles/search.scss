@@ -1,3 +1,5 @@
+$brandColor: rgba(168,0,37,255); 
+$bgSecondaryColor: rgb(255, 231, 231);
 
 body {
   display: flex;
@@ -5,7 +7,21 @@ body {
   align-items: normal;
   justify-content: flex-start;
   margin-left: 1rem; 
+
 }
+
+#search-heading  {
+  display: flex;
+  justify-content: center;
+  background-color: $brandColor;
+  font-size: 3rem;
+  color: #fff;
+  width: 85%;
+  border-radius: 30px;
+  height: 4.5rem; 
+
+}
+
 
 .search-form {
   display: flex;
