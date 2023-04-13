@@ -60,19 +60,38 @@ textarea {
 }
 
 .tags-container {
-  button {
-    margin-top: 2%;
-    margin-right: 5%;
-    border-radius: 15px;
-    background-color: rgba(168,0,37,255);
-    font-weight: 600;
-    color: white;
-    border-color: none;
+  .star-rating {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    .star {
+      color: rgb(255, 153, 0);
+      font-size: 2rem;
+      background-color: unset;
+      border: none;
+
+      :hover {
+        cursor: pointer;
+      }
+    }
   }
+
+  // button {
+  //   margin-top: 2%;
+  //   margin-right: 5%;
+  //   border-radius: 5px;
+  //   background-color: rgba(168,0,37,255);
+  //   font-weight: 600;
+  //   color: white;
+  //   border-color: none;
+  // }
 
   .btn-danger:active {
     transform: translateY(3px);
   }
+
 
 }
 
