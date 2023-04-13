@@ -8,6 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const resourceQueries = require('../db/queries/resource-modify');
+const dbQueries = require('../db/queries/resource'); 
 
 router.use((req, res, next) => {
   console.log(req.url, '@resource-modify@', Date.now());
@@ -48,14 +49,18 @@ router.post("/like/:id", (req, res) => {
 });
 
 router.post("/rate/:id", (req, res) => {
-
+  console.log('req.body.rating', req.body.rating)
+  console.log('req.session.userSessionID', req.session.userSessionID);
+  console.log('req.params.id', req.params.id);
   const data = {
                   'resource_id': req.params.id,
                   'user_id': req.session.userSessionID,
                   'rating': req.body.rating
                 };
 
-  resourceQueries.rateResource(data);
+  dbQueries.addRating(data);
+  console.log('Rating added to db')
   // res.redirect('/users');
 });
+
 module.exports = router;

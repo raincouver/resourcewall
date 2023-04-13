@@ -24,8 +24,7 @@ const queryGetLikes = `
                         SELECT user_id
                         FROM likes
                         WHERE resource_id = $1
-                        LIMIT 1;`;
-
+                        LIMIT 1;`;              
 
 const getUserLikes = (id) => {
   return db.query(queryGetLikes, [id])
@@ -58,6 +57,15 @@ const addComment = function(user_id = 1, resource_id, message) {
     });
 };
 
+const addRating = (data) => {
 
+  console.log(data);
+  return db.query(`
+            INSERT INTO ratings (user_id, resource_id, rating)
+            VALUES ($1, $2, $3);`, [data.user_id, data.resource_id, data.rating])
+  .then(
+    console.log('rated the resource successfully')
+  );
 
-module.exports = { getUserLikes, getResourceById, getCommentsById, addComment };
+};
+module.exports = { getUserLikes, getResourceById, getCommentsById, addComment, addRating };
