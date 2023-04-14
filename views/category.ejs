@@ -46,25 +46,26 @@
     <section id="tags-container">
 
       <% for (let cat of category) { %>
-       <a href="/resource/<%= cat.id %>"><article class="cat-cards">
-       <% for (let cat of category) { %>
-        <article class="cat-cards">
-          <div class="tag-element">
-            <p>
-              <%= cat.title %>
-            </p>
-          </div>
+        <a href="/resource/<%= cat.id %>">
+          <article class="cat-cards">
+            <% for (let cat of category) { %>
+              <article class="cat-cards">
+                <div class="tag-element">
+                  <p>
+                    <%= cat.title %>
+                  </p>
+                </div>
 
-          <div class="like">
-            <p>Likes: <%= cat.likes %>
-            </p>
-          </div>
+                <div class="like">
+                  <p>Likes: <%= cat.likes %>
+                  </p>
+                </div>
 
-          <div class="rating">
-            <p>Rating: <%= cat.rating %>/5</p>
-          </div>
-        </article>
-      </a>
+                <div class="rating">
+                  <p>Rating: <%= cat.rating %>/5</p>
+                </div>
+              </article>
+        </a>
         <% } %>
 
 
