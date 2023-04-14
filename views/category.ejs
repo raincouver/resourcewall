@@ -26,7 +26,7 @@
     <section id="tags-container">
 
       <% for (let cat of category) { %>
-        <article class="cat-cards">
+       <a href="/resource/<%= cat.id %>"><article class="cat-cards">
           <div class="tag-element">
             <p>
               <%= cat.title %>
@@ -42,6 +42,7 @@
             <p>Rating: <%= cat.rating %>/5</p>
           </div>
         </article>
+      </a>
         <% } %>
 
     </section>
