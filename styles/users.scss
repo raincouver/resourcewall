@@ -1,3 +1,6 @@
+$brandColor: rgba(168,0,37,255); 
+$bgSecondaryColor: rgb(255, 231, 231);
+
 header #navbar-header {
   display: flex;
   width: auto;
@@ -11,32 +14,24 @@ body {
   width: 100%;
   align-items: normal;
   justify-content: flex-start;
-  
+ 
   main { 
-    margin-left: 1rem;
-    margin-right: 1rem; 
-
-    #userInfo {
-
-      #userAvatar {
-        padding: 1rem; 
-        border-radius: 40%;
-      }
-
-      span {
-        display: flex;
-        padding: 1rem;
-      } 
-    }
+    margin-left: 2rem;
+    margin-right: 2rem; 
 
     #myUrls {
       display: flex;
       padding: 1rem;
+      padding-left: 0;
       font-size: 1rem;
+
+      #title-column {
+        width: 300px;
+      }
 
       table {
         border-collapse: collapse;
-        width: 100%;
+        width: 70%;
       }
       
       td, th {
@@ -51,18 +46,21 @@ body {
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-
-  
-    }
+    }  
 
     #likedUrls {
       display: flex;
       padding: 1rem;
+      padding-left: 0;
       font-size: 1rem;
+      
+      #title-column {
+        width: 300px;
+      }
 
       table {
-        border-collapse: collapse;
-        width: 100%;
+        // border-collapse: collapse;
+        width: 70%;
         
       }
       
@@ -79,13 +77,49 @@ body {
       tr:nth-child(even) {
         background-color: #f2f2f2;
       }
-
-      
-  
     }
+  
+      
+    }
+
+  #userInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .user-avatar-name-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: $bgSecondaryColor;
+      border-radius: 60px;
+      width: 30%;
+      height: 50%;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+      }
+
+    #userAvatar {
+      padding: 1rem;
+      padding-top: 0;
+      border-radius: 40%;
+      height: 150px;
+    }
+
+    span {
+      display: flex;
+      padding: 1rem;
+      font-size: 2rem;
+      font-weight: 700;
+    } 
   }
-
- 
-
 }
+  
+  button:active {
+    transform: translateY(3px);
+  } 
+
+
+
+
 

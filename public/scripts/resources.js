@@ -21,16 +21,16 @@ $(() => {
     .catch(err => console.log(err));
 
 
-    $.ajax({
-      method: 'GET',
-      url: `/resource-modify/rate/${id}`
-    })
-      .then((response) => {
+    // $.ajax({
+    //   method: 'GET',
+    //   url: `/resource-modify/rate/${id}`
+    // })
+    //   .then((response) => {
   
-        document.querySelector('.star').disabled = `${response.rateBtn.rateBtnStatus}`;
+    //     document.querySelector('.star').disabled = `${response.rateBtn.rateBtnStatus}`;
   
-      })
-      .catch(err => console.log(err));
+    //   })
+    //   .catch(err => console.log(err));
 
 
 

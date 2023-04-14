@@ -11,18 +11,18 @@ $(() => {
         console.log(element.my_urls_titles);
         const tableRow = `   
 
-            
-            <div>
-              <img id="userAvatar" src=${element.profile_picture_path}>
-            </div>
-            <div>
-              <span>Hi! ${element.name}</span>
-            </div>
-            
-            <div>
-            <form method="POST" action="/resource-modify/newRandomAvatar/${element.id}">
-            <button type="submit" class="btn btn-outline-danger">Get a new look</button>
-            </form>
+            <div class="user-avatar-name-container">
+              <div>
+                <span>${element.name}</span>
+              </div>
+              <div>
+                <img id="userAvatar" src=${element.profile_picture_path}>
+              </div>
+              <div>
+              <form method="POST" action="/resource-modify/newRandomAvatar/${element.id}">
+              <button type="submit" class="btn btn-danger">Get a new look</button>
+              </form>
+              </div>
             </div>
             
             <div>
@@ -30,7 +30,7 @@ $(() => {
             <label>New nickname:</label>
             <input type="text" id="new-name" name="newName" placeholder="" value="" class="form-control"
               style="width:30rem">
-            <button type="submit" class="btn btn-outline-danger">Change Name</button>
+            <button type="submit" class="btn btn-danger">Change Name</button>
             </form>
             </div>
             
@@ -39,7 +39,7 @@ $(() => {
             <label>New Password:</label>
             <input type="password" id="new-pwd" name="newPwd" placeholder="" value="" class="form-control"
               style="width:30rem">
-            <button type="submit" class="btn btn-outline-danger">Change Password</button>
+            <button type="submit" class="btn btn-danger">Change Password</button>
             </form>
             </div>
 
@@ -63,12 +63,12 @@ $(() => {
           const tableRow = `   
 
             <tr>
-              <td>
+              <td id="title-column">
                 ${element.my_urls_titles}
               </td>
-              <td>
+              <td id="view-column">
                 <form method="GET" action="/resource/${element.id}">
-                  <button type="submit" class="btn btn-outline-primary">Edit</button>
+                  <button type="submit" class="btn btn-outline-primary">View</button>
                 </form>
               </td>
               <td>
@@ -96,10 +96,10 @@ $(() => {
               console.log(element.my_urls_titles);
               const tableRow = `    
                 <tr>
-                  <td>
+                  <td id="title-column">
                     ${element.liked_urls_titles}
                   </td>
-                  <td>
+                  <td id="view-column">
                     <form method="GET" action="/resource/${element.id}">
                       <button type="submit" class="btn btn-outline-primary">View</button>
                     </form>
