@@ -31,6 +31,7 @@ categories.name = $1
 GROUP BY
 resources.id,
 categories.id,
+resources.id,
 categories.name,
 resources.title,
 ratings.rating

@@ -44,21 +44,9 @@
     </h1>
 
     <section id="tags-container">
-      <!-- <table>
-        <thead>
-          <tr>
-            <th colspan="2">Resource Info</th>
-            <th colspan="2">Feedbacks</th>
-          </tr>
-          <tr>
-            <th>Title</th>
-            <th>URL</th>
-            <th>Likes</th>
-            <th>Avg Ratings</th>
-          </tr>
-        </thead>
-        <tbody id="resourcesFound"> --> 
 
+      <% for (let cat of category) { %>
+       <a href="/resource/<%= cat.id %>"><article class="cat-cards">
        <% for (let cat of category) { %>
         <article class="cat-cards">
           <div class="tag-element">
@@ -76,6 +64,7 @@
             <p>Rating: <%= cat.rating %>/5</p>
           </div>
         </article>
+      </a>
         <% } %>
 
 
