@@ -45,7 +45,7 @@ const usersRoutes = require('./routes/users');
 const usersApiRoutes = require('./routes/users-api');
 const searchRoutes = require('./routes/search');
 const commentsRoutes = require('./routes/comments-api')
-const categoryApiRoutes = require('./routes/category-api')
+// const categoryApiRoutes = require('./routes/category-api')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -61,7 +61,7 @@ app.use('/users', usersRoutes);
 app.use('/users-api', usersApiRoutes);
 app.use('/search', searchRoutes);
 app.use('/comments-api', commentsRoutes);
-app.use('/category-api', categoryApiRoutes);
+// app.use('/category-api', categoryApiRoutes);
 // Note: mount other resources here, using the same pattern above
 
 // Home page
