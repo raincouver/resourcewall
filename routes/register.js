@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const loginQueries = require('../db/queries/login');
+const resourceQueries = require('../db/queries/resource-modify');
 const bcrypt = require("bcrypt");
 
 
@@ -11,7 +12,7 @@ router.use((req, res, next) => {
 
 // GET 'Register' Route
 router.get('/', (req, res) => {
-  
+
   const userSessionID = req.session.userSessionID;
   // if logged in already, redirect to /users
   if (userSessionID) {
@@ -20,7 +21,7 @@ router.get('/', (req, res) => {
 
   //Otherwise continue to log in page
   res.render('register');
-}); 
+});
 
 // POST 'Register' Route
 router.post('/', (req, res) => {
@@ -40,6 +41,7 @@ router.post('/', (req, res) => {
   loginQueries.getUserByEmail(email)
     .then((results) => {
       const foundUser = results[0];
+      console.log('xxxxxxxxx',results);
 
       if (foundUser) {
         return res.status(400).send("<img src='https://http.cat/400'><h1>Email already registered! Please log in.</h1>");
@@ -54,13 +56,26 @@ router.post('/', (req, res) => {
         'email': email,
         'password': hashed_password,
         'avatar': profile_photo
-      }
+      };
 
       loginQueries.registerNewUser(newUser)
-      .then(
-        res.redirect('/login')
-      )
+        .then((thisresults) => {
 
+          console.log('xxxxxxxxx',thisresults);
+          const Input = {
+            'resource_id': 9,
+            'user_id': thisresults[0].id
+          };
+
+          resourceQueries.likeResource(Input)
+            .then(
+              res.redirect('/login')
+            )
+            .catch((err) => {
+              console.error('Error Liking resource wall:', err);
+              res.status(500).send(err);
+            });
+        });
     })
     .catch((err) => {
       console.error('Error Signing up:', err);

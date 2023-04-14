@@ -135,3 +135,19 @@ VALUES
     'Guitar videos and lessons by Paul Davids'
   );
 
+INSERT INTO resources 
+  (
+    user_id,
+    category_id,
+    url,
+    title,
+    description
+  ) 
+VALUES 
+  (
+    1,
+    4,
+    'http://localhost:8080/',
+    'Resource Wall',
+    'The most loved resoure sharing website of all time.'
+  );
