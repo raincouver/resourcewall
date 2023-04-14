@@ -32,8 +32,8 @@ router.post('/', (req, res) => {
   console.log(email);
 
   //Check if email and password were not provided
-  if (!email || !password) {
-    return res.status(400).send("<img src='https://http.cat/400'><h1>Please provide email and password!</h1>");
+  if (!email || !name || !password) {
+    return res.status(400).send("<img src='https://http.cat/400'><h1>All entires are required!</h1>");
   }
 
   //Look up the user based on their email address

@@ -1,5 +1,6 @@
 const db = require('../connection');
 
+
 const querygetCategoryInfoById = `SELECT
 categories.id,
 categories.name,
@@ -33,5 +34,13 @@ const getCategoryInfoById = (id) => {
     });
 };
 
-
-module.exports = { getCategoryInfoById };
+const getCategoryNameById = (id) => {
+  return db.query(`
+                  SELECT name
+                  FROM categories
+                  WHERE id = $1;`, [id])
+    .then(data => {
+      return data.rows;
+    });
+};
+module.exports = { getCategoryNameById, getCategoryInfoById };

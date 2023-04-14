@@ -20,18 +20,6 @@ const insertComment = `
                         RETURNING *;
                           `;
 
-const queryGetLikes = `
-                        SELECT user_id
-                        FROM likes
-                        WHERE resource_id = $1
-                        LIMIT 1;`;              
-
-const getUserLikes = (id) => {
-  return db.query(queryGetLikes, [id])
-    .then(data => {
-      return data.rows;
-    });
-};
 
 const getResourceById = (id) => {
   return db.query(querygetResourceById, [id])
@@ -68,4 +56,4 @@ const addRating = (data) => {
   );
 
 };
-module.exports = { getUserLikes, getResourceById, getCommentsById, addComment, addRating };
+module.exports = { getResourceById, getCommentsById, addComment, addRating };
