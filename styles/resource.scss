@@ -45,16 +45,31 @@ body {
   border-radius: 10px;
   padding: 10px;
 }
-.content-container{
 
- li {
-  list-style-type: none;
-  a {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: black;
+#url-list {
+  padding-left: none; 
+}
+
+.content-container{
+  
+  .resource-list {
+    display: flex;
+  } 
+
+
+
+  li {
+    list-style-type: none;
+    justify-content: flex-start;
+  
+
+    a {
+      text-decoration: none;
+      font-weight: 600;
+      color: rgb(6, 11, 35);
+      justify-content: flex-start; 
+    }
   }
- }
 }
 
 .comments-container {

@@ -56,13 +56,31 @@ The following steps are only for _one_ of the group members to perform.
 * "As a logged in user, I can update my rating" 
 * "As a logged in user, I can see an average rating on each resource"
 
-* "As a non-logged in user, I can sign-in to my account"
-* "As a non-logged in user, I can register a new account" 
-* "As a non-logged in user, I have no access to the resources" 
-  * "As a non-logged in user, I cannot search any resources" 
-  * "As a non-logged in user, I cannot update any resources" 
-  * "As a non-logged in user, I cannot delete any resources" 
-  * "As a non-logged in user, I cannot like any resource" 
-  * "As a non-logged in user, I cannot comment on any resource"
-  * "As a non-logged in user, I cannot rate any resource"  
+Stretch  
 
+###
+Demo Notes
+
+* Evaluator noted "energy" level dipped during presentation
+* "You should be excited to present your app"
+* When presenting on camera, make sure lighting is good, full face is shown, no background over-exposure
+* Flow of presentation is important, have demonstration and talking in sync with no awkward pauses
+* Practice demoing with good flow
+* Use a narrative, tell a story of a person seeing and using the app for the first time 
+* The audience is the user, direct their attention to what you want them to see with phrases like "Now if you look at the cursor..."
+* No external distractions during presentation time 
+* Business casual dress-code; NO HATS
+
+Script 
+1. Open app at start
+2. Quick introduction from each member (kev, rain, james) and why we chose this project
+3. We chose this project because we felt like it could be a starting-point for a more advanced app in the future and    might be useful 
+4. Sign up > Continue > Login
+5. Here we have the user home page > rain
+6. Here we have the add new resource page > rain
+7. Here we have the resources page > james
+8. Here we have the categories page > james
+9. Here we have the search page > kev > search "cats" not found > search nothing > error 
+10. That's it! We worked really hard on this and only cried once
+11. (Stretch) We did not add error handling for non-logged-in users of the app 
+ 
