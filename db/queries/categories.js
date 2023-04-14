@@ -1,13 +1,29 @@
 const db = require('../connection');
 
-const querygetCategoryInfoById = `  SELECT categories.id, categories.name,resources.title, COUNT(likes.id) AS likes, AVG(ratings.rating) AS rating
-                                    FROM categories
-                                    JOIN resources ON categories.id = resources.category_id
-                                    JOIN likes ON likes.resource_id = resources.id
-                                    JOIN ratings ON ratings.resource_id = resources.id
-                                    WHERE categories.name = $1
-                                    GROUP BY categories.id, categories.name, resources.title, ratings.rating
-                                    ORDER BY resources.title;`;
+
+const querygetCategoryInfoById = `SELECT
+categories.id,
+categories.name,
+resources.title,
+COUNT(likes.id) AS likes,
+ratings.rating AS rating
+FROM
+categories
+FULL OUTER JOIN
+resources ON categories.id = resources.category_id
+FULL OUTER JOIN
+likes ON likes.resource_id = resources.id
+FULL OUTER JOIN
+ratings ON ratings.resource_id = resources.id
+WHERE
+categories.name = $1
+GROUP BY
+categories.id,
+categories.name,
+resources.title,
+ratings.rating
+ORDER BY
+resources.title;`;
 
 
 

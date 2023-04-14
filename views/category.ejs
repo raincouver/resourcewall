@@ -37,28 +37,36 @@
 
 <body>
   <main>
+
+    <h1>
+      Category: <%= category[0].name %>
+    </h1>
+
+    <section id="tags-container">
+
+      <% for (let cat of category) { %>
+        <article class="cat-cards">
+          <div class="tag-element">
+            <p>
+              <%= cat.title %>
+            </p>
+          </div>
+
+          <div class="like">
+            <p>Likes: <%= cat.likes %>
+            </p>
+          </div>
+
+          <div class="rating">
+            <p>Rating: <%= cat.rating %>/5</p>
+          </div>
+        </article>
+        <% } %>
+
     <div id="h1">
     </div>
 
 
-    <section id="tags-container">
-      <table>
-        <thead>
-          <tr>
-            <th colspan="2">Resource Info</th>
-            <th colspan="2">Feedbacks</th>
-          </tr>
-          <tr>
-            <th>Title</th>
-            <th>URL</th>
-            <th>Likes</th>
-            <th>Avg Ratings</th>
-          </tr>
-        </thead>
-        <tbody id="resourcesFound">
-
-        </tbody>
-      </table>
     </section>
 
   </main>
