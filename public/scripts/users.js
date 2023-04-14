@@ -11,12 +11,40 @@ $(() => {
         console.log(element.my_urls_titles);
         const tableRow = `   
 
+            
             <div>
               <img id="userAvatar" src=${element.profile_picture_path}>
             </div>
             <div>
               <span>Hi! ${element.name}</span>
-            </div>`;
+            </div>
+            
+            <div>
+            <form method="POST" action="/resource-modify/newRandomAvatar/${element.id}">
+            <button type="submit" class="btn btn-outline-danger">Get a new look</button>
+            </form>
+            </div>
+            
+            <div>
+            <form method="POST" action="/resource-modify/changeUserName/${element.id}">
+            <label>New nickname:</label>
+            <input type="text" id="new-name" name="newName" placeholder="" value="" class="form-control"
+              style="width:30rem">
+            <button type="submit" class="btn btn-outline-danger">Change Name</button>
+            </form>
+            </div>
+            
+            <div>
+            <form method="POST" action="/resource-modify/changepwd/${element.id}">
+            <label>New Password:</label>
+            <input type="password" id="new-pwd" name="newPwd" placeholder="" value="" class="form-control"
+              style="width:30rem">
+            <button type="submit" class="btn btn-outline-danger">Change Password</button>
+            </form>
+            </div>
+
+
+            `;
 
         $('#userInfo').append(tableRow);
       });
@@ -87,6 +115,10 @@ $(() => {
             });
           })
           .catch(err => console.log(err));
+
+
+
+
 
 });
 

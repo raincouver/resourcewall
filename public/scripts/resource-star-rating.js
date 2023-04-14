@@ -13,7 +13,7 @@ allStars.forEach((star, i) => {
       }
     })
     ratingElement.value = current_star_level; 
-    currentRating.textContent = `${current_star_level} of 5`;
+    currentRating.textContent = `Rating: ${current_star_level} of 5`;
 
     // AJAX request to the server to add the rating
     const id = window.location.pathname.slice(-1)

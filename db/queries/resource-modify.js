@@ -1,13 +1,5 @@
 const db = require('../connection');
 
-// const changePassword = (id) => {
-//   const querychangePassword  = `
-//                                 Update users
-//                                 SET password = hash(newPassword)
-//                                 WHERE id = ${id};
-//                                 `;
-// };
-
 const deleteResource = (id) => {
 
   return db.query(`
@@ -79,6 +71,44 @@ const checkIfRated = (data) => {
 
 };
 
-module.exports = { 
-  // changePassword, 
-  deleteResource, dislikeResource, likeResource, rateResource, checkIfLiked, checkIfRated };
+
+const changeUserName = (data) => {
+
+  return db.query(`
+                  UPDATE users 
+                  SET name = $1 
+                  WHERE id = $2`, [data.newName, data.user_id])
+
+};
+
+const changePwd = (data) => {
+
+  return db.query(`
+                  UPDATE users 
+                  SET password = $1 
+                  WHERE id = $2`, [data.newPwd, data.user_id])
+
+};
+
+const newRandomAvatar = (data) => {
+
+  return db.query(`
+                  UPDATE users 
+                  SET profile_picture_path = $1 
+                  WHERE id = $2`, [data.newAvatarPath, data.user_id])
+
+};
+
+// const deleteAccount = (id) => {
+
+//   return db.query(`
+//                   UPDATE users 
+//                   SET profile_picture_path = $1 
+//                   WHERE id = $2`, [data.newAvatarPath, data.user_id])
+
+// };
+
+module.exports = { changePwd, changeUserName, newRandomAvatar, 
+                   deleteResource, dislikeResource, 
+                   likeResource, rateResource, checkIfLiked, checkIfRated 
+                  };
