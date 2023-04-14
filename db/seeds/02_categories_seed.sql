@@ -9,3 +9,7 @@ VALUES ('General');
 -- Category 3 -- 'Hobbies'
 INSERT INTO categories (name)
 VALUES ('Hobbies');
+
+-- Category 4 -- 'Hobbies'
+INSERT INTO categories (name)
+VALUES ('Most Loved');

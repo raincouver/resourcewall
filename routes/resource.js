@@ -15,6 +15,12 @@ const router  = express.Router();
 router.get('/:id', (req, res) => {
   const resource = req.params.id;
 
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+
   getResourceById(resource)
   .then((resourceData) => {
     console.log('resourceData: ', resourceData);

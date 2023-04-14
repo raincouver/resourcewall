@@ -15,7 +15,7 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
 
   <!-- App JS -->
-  <script type="text/javascript" src="/scripts/categories.js"></script>
+  <!-- <script type="text/javascript" src="/scripts/categories.js"></script> -->
   <!-- /styles CSS-->
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/users.css">
@@ -38,7 +38,6 @@
 <body>
   <main>
 
-
     <h1>
       Category: <%= category[0].name %>
     </h1>
@@ -47,8 +46,6 @@
 
       <% for (let cat of category) { %>
        <a href="/resource/<%= cat.id %>"><article class="cat-cards">
-       <% for (let cat of category) { %>
-        <article class="cat-cards">
           <div class="tag-element">
             <p>
               <%= cat.title %>

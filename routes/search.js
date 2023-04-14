@@ -7,6 +7,13 @@ router.get('/', (req, res) => {
 });
 
 router.get('/term/:term', (req, res) => {
+
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+  
   const searchTerm = req.params.term;
   
   searchAllResources(`%${searchTerm}%`)
