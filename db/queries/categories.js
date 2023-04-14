@@ -15,6 +15,7 @@ const querygetCategoryInfoById = `SELECT
 categories.id,
 categories.name,
 resources.title,
+resources.id,
 COUNT(likes.id) AS likes,
 ratings.rating AS rating
 FROM
@@ -28,6 +29,7 @@ ratings ON ratings.resource_id = resources.id
 WHERE
 categories.name = $1
 GROUP BY
+resources.id,
 categories.id,
 categories.name,
 resources.title,
