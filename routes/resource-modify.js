@@ -45,15 +45,15 @@ router.get("/like/:id", (req, res) => {
   .then(response => {
 
     let likeBtn = {
-                    'likeBtnText': 'I LIKED IT ALREADY!',
-                    'likeBtnStyle': 'class="btn btn-lg btn-primary" disabled'
+                    'likeBtnText': 'Liked',
+                    'likeBtnStyle': 'class="btn btn-lg btn-danger" disabled'
                   };
 
     if (!response[0]) {
 
       likeBtn = {
-                  'likeBtnText': 'I LIKE IT!',
-                  'likeBtnStyle': 'class="btn btn-lg btn-primary"'
+                  'likeBtnText': 'Like',
+                  'likeBtnStyle': 'class="btn btn-lg btn-danger"'
                 };
 
     }
