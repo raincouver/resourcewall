@@ -11,6 +11,13 @@ const { getCategoryInfoById } = require('../db/queries/categories')
 
 
 router.get('/:id', (req, res) => {
+
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+  
   const category = req.params.id
   getCategoryInfoById(category)
   .then((categoryData) => {

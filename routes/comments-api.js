@@ -16,6 +16,13 @@ router.use((req, res, next) => {
 })
 
 router.get('/:id', (req, res) => {
+
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+
   console.log('reqParams: ', req.params)
   userQueries.getCommentsById(req.params.id)
   .then(resource => {
@@ -30,6 +37,13 @@ router.get('/:id', (req, res) => {
 
 
 router.post('/:id', (req, res) => {
+
+  let userSessionID = req.session.userSessionID;
+
+  if (!userSessionID) {
+    return res.redirect('/login');
+  }
+  
   const userID = req.session.userSessionID;
   userQueries.addComment(userID, req.params.id, req.body['comment-text'])
   .then(comment => {
