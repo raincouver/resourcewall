@@ -52,7 +52,7 @@
 
       <div class="content-description">
         <p>
-          <%= resource['description'] %>
+          Description: <%= resource['description'] %>
         </p>
       </div>
 
@@ -64,10 +64,9 @@
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
-
-          <div class="current-rating">Rating: 0 of 5</div>
-          <input type="hidden" name="rating" id="rating"/>
-
+            
+            <div class="current-rating">Rating: 0 of 5</div>
+            <input type="hidden" name="rating" id="rating"/>
 
         </div>
         <!-- <button class="btn btn-danger">Rating</button> -->
@@ -78,17 +77,17 @@
     <div class="comments-container">
       <form id="comment-form" action="/comments-api" method="POST">
         <div>
-          <textarea id="comment-text" placeholder="Add a comment" name="comment-text" id="" cols="30"
-            rows="10"></textarea>
+          <textarea id="comment-text" placeholder="Add a comment" name="comment-text"></textarea>
         </div>
         <div class="button-container">
           <button type="submit" class="btn btn-danger">Post Comment</button>
         </div>
       </form>
-      <h3>Comments</h3>
+      <div id="new-comment-container">
+        <h3>Comments</h3>
 
-      <div class="appended-comments">
-
+          <div class="appended-comments">
+          </div>  
       </div>
     </div>
 

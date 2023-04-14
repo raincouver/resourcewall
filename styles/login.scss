@@ -4,8 +4,9 @@ $bgSecondaryColor: rgb(255, 231, 231);
 body {
 display: flex;
 flex-direction: column;
-justify-content: space-evenly;
+justify-content: flex-start;
 align-items: center;
+padding-top: 5rem;
 
 .body-container {
   display: flex;
@@ -19,10 +20,10 @@ align-items: center;
 body #welcome-text {
     justify-content: center;
     align-items: center;
-    color: $brandColor;
+    color: grey;
     font-size: 1.5rem;
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 
 #brand-header {
