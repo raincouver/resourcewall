@@ -1,0 +1,41 @@
+$brandColor: rgba(168,0,37,255); 
+$bgSecondaryColor: rgb(255, 231, 231);
+
+body {
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+}
+
+body #welcome-text {
+    justify-content: center;
+    align-items: center;
+    color: $brandColor;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+#brand-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $brandColor;
+  font-size: 3rem;
+  font-weight: 700;
+
+} 
+
+.nav-logo {
+  font-size: 2rem; 
+}
